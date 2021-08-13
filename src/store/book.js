@@ -11,8 +11,6 @@ export const bookSlice = createSlice({
       state.list.push({
         id: uuidv4().slice(0, 5),
         title: action.payload.title,
-        description: action.payload.description,
-        category: action.payload.category,
       });
     },
     removeBook: (state, action) => {
