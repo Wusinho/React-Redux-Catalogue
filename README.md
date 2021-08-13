@@ -6,7 +6,7 @@ It is catalogue using React and Redux
 
 ## Live demo
 
-[live demo]()
+[live demo](https://6116f83c2d7bdb2ddc4ec952--hungry-tereshkova-d0e975.netlify.app/)
 
 ## Built With
 
