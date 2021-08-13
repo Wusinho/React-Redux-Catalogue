@@ -1,3 +1,4 @@
+/* eslint-disable */
 const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 const { HotModuleReplacementPlugin } = require("webpack");
 const { merge } = require("webpack-merge");
@@ -5,16 +6,16 @@ const common = require("./webpack.common");
 
 /** @type {import('webpack').Configuration} */
 const devConfig = {
-  mode: "development",
+  mode: 'development',
   devServer: {
     port: 3000,
-    contentBase: "../dist",
-    open: "firefox", //No olviden cambiar esta opcion por su navegador preferido
+    contentBase: '../dist',
+    open: 'firefox',
     hot: true,
   },
-  target: "web",
+  target: 'web',
   plugins: [new HotModuleReplacementPlugin(), new ReactRefreshWebpackPlugin()],
-  devtool: "eval-source-map",
+  devtool: 'eval-source-map',
 };
 
 module.exports = merge(common, devConfig);
