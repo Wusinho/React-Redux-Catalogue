@@ -5,7 +5,8 @@ import api from './middleware/api';
 function configureStoreApp() {
   return configureStore({
     reducer,
-    middleware: [api],
+    middleware: [
+      api],
   });
 }
 

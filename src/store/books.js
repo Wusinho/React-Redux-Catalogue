@@ -1,12 +1,18 @@
+/* eslint-disable */
+
 import { v4 as uuidv4 } from 'uuid';
 import { createSlice } from '@reduxjs/toolkit';
 
 export const bookSlice = createSlice({
-  name: 'book',
+  name: 'books',
   initialState: {
-    list: [],
+    list: {},
+    loading: false,
   },
   reducers: {
+    booksReceived: (books, action) => {
+      books.list = action.payload;
+    },
     addBook: (state, action) => {
       state.list.push({
         id: uuidv4().slice(0, 5),
@@ -20,6 +26,6 @@ export const bookSlice = createSlice({
   },
 });
 
-export const { addBook, removeBook } = bookSlice.actions;
+export const { addBook, removeBook, booksReceived } = bookSlice.actions;
 
 export default bookSlice.reducer;
