@@ -6,6 +6,15 @@ import configureStoreApp from '../store/configureStore';
 
 const store = configureStoreApp();
 
+store.dispatch({
+  type: 'apiCallBegan',
+  payload: {
+    url: '/api',
+    onSuccess: 'apiReceived',
+    onError: 'apiRequestFailed',
+  },
+});
+
 const App = () => (
   <Provider store={store}>
     <BookForm />
