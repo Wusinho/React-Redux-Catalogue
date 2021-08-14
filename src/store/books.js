@@ -1,8 +1,6 @@
-/* eslint-disable */
-
 import { v4 as uuidv4 } from 'uuid';
 import { createSlice } from '@reduxjs/toolkit';
-import { apiCallBegan} from './api'
+import { apiCallBegan} from './api';
 
 export const bookSlice = createSlice({
   name: 'books',
@@ -11,7 +9,7 @@ export const bookSlice = createSlice({
     loading: false,
   },
   reducers: {
-    booksRequested: (books, action) => {
+    booksRequested: (books) => {
       books.loading = true;
     },
     booksReceived: (books, action) => {
@@ -31,18 +29,16 @@ export const bookSlice = createSlice({
   },
 });
 
-export const { addBook, removeBook, booksReceived, booksRequested } = bookSlice.actions;
+export const {
+  addBook, removeBook, booksReceived, booksRequested,
+} = bookSlice.actions;
 
 export default bookSlice.reducer;
 
-//Action creatores
-const url = '/books/'
+const url = '/books/';
 
 export const loadBooks = () => apiCallBegan({
   url,
   onStart: booksRequested.type,
   onSuccess: booksReceived.type,
-})
-
-
-
+});
