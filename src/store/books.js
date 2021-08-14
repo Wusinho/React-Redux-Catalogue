@@ -2,6 +2,7 @@
 
 import { v4 as uuidv4 } from 'uuid';
 import { createSlice } from '@reduxjs/toolkit';
+import { apiCallBegan} from './api'
 
 export const bookSlice = createSlice({
   name: 'books',
@@ -29,3 +30,14 @@ export const bookSlice = createSlice({
 export const { addBook, removeBook, booksReceived } = bookSlice.actions;
 
 export default bookSlice.reducer;
+
+//Action creatores
+const url = '/books/'
+
+export const loadBooks = () => apiCallBegan({
+  url,
+  onSuccess: booksReceived.type,
+})
+
+
+
