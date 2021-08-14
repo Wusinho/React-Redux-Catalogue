@@ -11,8 +11,12 @@ export const bookSlice = createSlice({
     loading: false,
   },
   reducers: {
+    booksRequested: (books, action) => {
+      books.loading = true;
+    },
     booksReceived: (books, action) => {
       books.list = action.payload;
+      books.loading = false;
     },
     addBook: (state, action) => {
       state.list.push({
@@ -27,7 +31,7 @@ export const bookSlice = createSlice({
   },
 });
 
-export const { addBook, removeBook, booksReceived } = bookSlice.actions;
+export const { addBook, removeBook, booksReceived, booksRequested } = bookSlice.actions;
 
 export default bookSlice.reducer;
 
@@ -36,6 +40,7 @@ const url = '/books/'
 
 export const loadBooks = () => apiCallBegan({
   url,
+  onStart: booksRequested.type,
   onSuccess: booksReceived.type,
 })
 
