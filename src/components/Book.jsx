@@ -8,13 +8,10 @@ const Book = ({ books }) => {
 
   return getBooks.map((book) => (
     <div
-      className="card mb-3"
+      className="card m-2 rounded-3"
       key={book.key}
       style={{
         backgroundImage: getPicture(book.name),
-        backgroundPosition: 'center',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
       }}
     >
       <div className="card-body">

@@ -24,4 +24,8 @@ $reactColor: #A8D145;
 .card {
   max-width: 540px;
   min-width: 300px;
+  // background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 1px soliid black;
 }
