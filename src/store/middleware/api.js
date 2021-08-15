@@ -28,7 +28,8 @@ const api =
 
     axios
       .get(
-      "https://rickandmortyapi.com/api/character/",
+      // "https://rickandmortyapi.com/api/character/",
+      "http://ddragon.leagueoflegends.com/cdn/11.16.1/data/en_US/champion.json",
         // url,
         // method,
         // data,
