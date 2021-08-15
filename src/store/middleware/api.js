@@ -15,14 +15,15 @@ const api =
 
     // try {
     //   const response = await axios.request({
-    //     baseUrl: "https://rickandmortyapi.com/api/character/1",
-    //     // url,
-    //     // method,
-    //     // data
+    //     baseUrl: "https://rickandmortyapi.com/api/character/",
+    //     url,
+    //     method,
+    //     data
     //   })
     //     dispatch({ type: onSuccess, payload: response.data})
     // } catch (error) {
-    //   dispatch({ type: onError, payload: error });
+    //     dispatch(actions.apiCallFailed(error.message));
+    //     if (onError) dispatch({ type: onError, payload: error.message} );
     // }
 
     axios
@@ -37,8 +38,8 @@ const api =
         if (onSuccess) dispatch({ type: onSuccess, payload: response.data })})
       // })
       .catch(error => {
-        dispatch(actions.apiCallFailed(error))
-        if (onError) dispatch({ type: onError, payload: error} )});
+        dispatch(actions.apiCallFailed(error.message));
+        if (onError) dispatch({ type: onError, payload: error.message} )});
   };
 
 export default api;

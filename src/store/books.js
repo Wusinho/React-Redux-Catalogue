@@ -1,6 +1,6 @@
-import { v4 as uuidv4 } from 'uuid';
+/* eslint-disable no-param-reassign */
 import { createSlice } from '@reduxjs/toolkit';
-import { apiCallBegan} from './api';
+import { apiCallBegan } from './api';
 
 export const bookSlice = createSlice({
   name: 'books',
@@ -16,29 +16,31 @@ export const bookSlice = createSlice({
       books.list = action.payload;
       books.loading = false;
     },
-    addBook: (state, action) => {
-      state.list.push({
-        id: uuidv4().slice(0, 5),
-        title: action.payload.title,
-      });
-    },
-    removeBook: (state, action) => {
-      const list = state.list.filter((book) => book.id !== action.payload.id);
-      return { list };
+    booksRequestFailed: (books) => {
+      books.loading = false;
     },
   },
 });
 
 export const {
-  addBook, removeBook, booksReceived, booksRequested,
+  addBook,
+  removeBook,
+  booksReceived,
+  booksRequested,
+  booksRequestFailed,
 } = bookSlice.actions;
 
 export default bookSlice.reducer;
 
-const url = '/books/';
+const url = '/books';
 
 export const loadBooks = () => apiCallBegan({
   url,
   onStart: booksRequested.type,
   onSuccess: booksReceived.type,
+  onError: booksRequestFailed.type,
 });
+
+// export const getBooks = createSelector(
+//   (state) => state.entities.books.list.results,
+// );
