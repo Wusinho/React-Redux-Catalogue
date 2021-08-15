@@ -15,7 +15,7 @@ const devConfig = {
   },
   target: 'web',
   plugins: [new HotModuleReplacementPlugin(), new ReactRefreshWebpackPlugin()],
-  devtool: 'eval-source-map',
+  devtool: 'source-map',
 };
 
 module.exports = merge(common, devConfig);

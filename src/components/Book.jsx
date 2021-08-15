@@ -1,15 +1,13 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const Book = ({ books }) => books.map((book) => (
-  <div className="card my-3" key={book.id}>
+const Book = ({ books }) => Object.keys(books).forEach((key) => {
+  <div className="card my-3" key={books[key].key}>
     <div className="card-body">
-      <h6 className="card-subtitle mb-2 text-muted">{book.name}</h6>
-      <h5 className="card-title">{book.status}</h5>
-      <p className="card-text">{book.species}</p>
+      <h6 className="card-subtitle mb-2 text-muted">{books[key].id}</h6>
     </div>
-  </div>
-));
+  </div>;
+});
 
 Book.defaultProps = {
   book: {

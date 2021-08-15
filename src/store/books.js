@@ -23,8 +23,6 @@ export const bookSlice = createSlice({
 });
 
 export const {
-  addBook,
-  removeBook,
   booksReceived,
   booksRequested,
   booksRequestFailed,

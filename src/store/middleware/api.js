@@ -21,6 +21,7 @@ const api =
     //     data
     //   })
     //     dispatch({ type: onSuccess, payload: response.data})
+    //   if (onSuccess) dispatch({ type: onSuccess, payload: response.data })
     // } catch (error) {
     //     dispatch(actions.apiCallFailed(error.message));
     //     if (onError) dispatch({ type: onError, payload: error.message} );
@@ -28,15 +29,11 @@ const api =
 
     axios
       .get(
-      // "https://rickandmortyapi.com/api/character/",
       "http://ddragon.leagueoflegends.com/cdn/11.16.1/data/en_US/champion.json",
-        // url,
-        // method,
-        // data,
       )
       .then(response => {
-        dispatch(actions.apiCallSuccess(response.data));
-        if (onSuccess) dispatch({ type: onSuccess, payload: response.data })})
+        dispatch(actions.apiCallSuccess(response.data.data));
+        if (onSuccess) dispatch({ type: onSuccess, payload: response.data.data })})
       // })
       .catch(error => {
         dispatch(actions.apiCallFailed(error.message));
@@ -44,3 +41,5 @@ const api =
   };
 
 export default api;
+
+      // "https://rickandmortyapi.com/api/character/",
