@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const Book = ({ book }) => (
+const Book = ({ books }) => books.map((book) => (
   <div className="card my-3" key={book.id}>
     <div className="card-body">
       <h6 className="card-subtitle mb-2 text-muted">{book.name}</h6>
@@ -9,7 +9,8 @@ const Book = ({ book }) => (
       <p className="card-text">{book.species}</p>
     </div>
   </div>
-);
+));
+
 Book.defaultProps = {
   book: {
     id: '',
@@ -20,6 +21,6 @@ Book.defaultProps = {
 };
 
 Book.propTypes = {
-  book: PropTypes.objectOf(Object),
+  books: PropTypes.objectOf(Object),
 };
 export default Book;

@@ -13,6 +13,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.1",
     "axios": "^0.21.1",
+    "bootstrap": "^5.1.0",
     "core-js": "^3.16.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
