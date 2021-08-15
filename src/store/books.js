@@ -5,8 +5,8 @@ import { apiCallBegan } from './api';
 export const bookSlice = createSlice({
   name: 'books',
   initialState: {
-    list: {},
     loading: false,
+    list: {},
   },
   reducers: {
     booksRequested: (books) => {
