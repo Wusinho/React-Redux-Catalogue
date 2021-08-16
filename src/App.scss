@@ -21,7 +21,7 @@ $reactColor: #A8D145;
   }
 }
 
-.card {
+.book__card {
   max-width: 100%;
   min-width: 300px;
   height: 300px;
@@ -29,9 +29,15 @@ $reactColor: #A8D145;
   background-repeat: no-repeat;
   background-position: center;
   transition-duration: 800ms;
+  border: none;
 }
 
-.card:hover {
+.book__card:hover {
   background-position: top;
   transition-duration: 800ms;
+}
+
+h5,
+h2 {
+  color: white;
 }

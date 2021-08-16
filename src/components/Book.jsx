@@ -8,7 +8,7 @@ const Book = ({ books }) => {
 
   return getBooks.map((book) => (
     <div
-      className="card m-2 rounded-3"
+      className="card m-2 rounded-3 book__card"
       key={book.key}
       style={{
         backgroundImage: getPicture(book.name),
