@@ -45,9 +45,42 @@ $reactColor: #A8D145;
 
 .card-body {
   filter: blur(1px);
+  height: 300px;
 }
 
 h5,
 h2 {
   color: white;
 }
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  background: blue;
+  color: white;
+}
+
+.nav-links {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+}
+
+ul {
+  font-size: 50px;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+// .card__container {
+//   display: flex;
+//   width: 100vw;
+//   flex-direction: column;
+//   margin: 0px;
+// }

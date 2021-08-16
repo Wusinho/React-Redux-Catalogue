@@ -20,9 +20,9 @@ const BooksList = () => {
   };
 
   return (
-    <>
+    <div className="card-group">
       {loadingState ? <Loading /> : selectedCat(selectedCategory)}
-    </>
+    </div>
   );
 };
 
