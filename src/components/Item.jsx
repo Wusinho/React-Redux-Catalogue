@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import Loading from './Loading';
+import Champ from './Champ';
 
 const Item = ({ match }) => {
-  const [char, setChar] = useState({
-    image: {},
-  });
+  const [char, setChar] = useState({});
+  const [img, setImg] = useState({});
 
   const fetchItem = async () => {
     const data = await fetch(
@@ -14,18 +15,21 @@ const Item = ({ match }) => {
     setChar(items.data);
   };
 
+  const fetchImg = async () => {
+    const data = await fetch(
+      `http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${match.params.id}_0.jpg`,
+    );
+    setImg(data.url);
+  };
+
   useEffect(() => {
     fetchItem();
+    fetchImg();
   }, []);
 
-  console.log(char);
   return (
     <div>
-      {/* <h1>{char.name}</h1>
-      <h1>{char.species}</h1>
-      <h1>{char.gender}</h1>
-      <img src={char.image} alt="" /> */}
-      <h1>champ</h1>
+      { char && img ? <Champ champ={char} img={img} /> : <Loading /> }
     </div>
   );
 };
@@ -37,5 +41,5 @@ Item.defaultProps = {
 };
 
 Item.propTypes = {
-  match: PropTypes.string,
+  match: PropTypes.objectOf(Object),
 };

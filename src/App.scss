@@ -78,9 +78,9 @@ a:link {
   text-decoration: none;
 }
 
-// .card__container {
-//   display: flex;
-//   width: 100vw;
-//   flex-direction: column;
-//   margin: 0px;
-// }
+.champ__card {
+  height: 80vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
