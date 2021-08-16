@@ -1,18 +1,10 @@
-/* eslint-disable no-param-reassign */
-import { createSlice } from '@reduxjs/toolkit';
+import * as actions from './actions';
 
-export const booksFiltered = createSlice({
-  name: 'filter',
-  initialState: 'All',
-  reducers: {
-    booksFilter: (state) => {
-      state.filter((book) => book.tags);
-    },
-  },
-});
+const filterReducer = (option = 'All', action) => {
+  if (action.type === actions.CHANGE_FILTER) {
+    return action.payload;
+  }
+  return option;
+};
 
-export const {
-  booksFilter,
-} = booksFiltered.actions;
-
-export default booksFiltered.reducer;
+export default filterReducer;

@@ -1,9 +1,12 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import categories from './categories';
+import changeFilter from '../store/filteractions';
 
 const Navbar = () => {
+  const dispatch = useDispatch();
   const handleFilterCHange = (e) => {
-    console.log(e.target.value);
+    dispatch(changeFilter(e.target.value));
   };
 
   return (
