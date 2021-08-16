@@ -17,7 +17,7 @@ const Book = ({ books }) => {
       <div className="card-body">
         <h5 className="card-title">{book.title}</h5>
         <h2 className="card-title">{book.name}</h2>
-        <p className="card-text">{book.blurb}</p>
+        {/* <p className="card-text">{book.blurb}</p> */}
       </div>
     </div>
   ));
