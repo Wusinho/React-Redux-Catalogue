@@ -1,0 +1,47 @@
+$reactColor: #A8D145;
+$animation-dur: 800ms;
+
+.app {
+  color: white;
+  background-color: $reactColor;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column-reverse;
+  h1 {
+    text-transform: uppercase;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 5rem;
+  }
+}
+
+.card-body {
+  min-width: 500px;
+}
+
+.link__card {
+  height: 300px;
+  background-color: none;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition-duration: $animation-dur;
+  border: none;
+  filter: blur(1px);
+  h5,
+  h2 {
+  color: white;
+  }
+  &:hover {
+    background-position: top;
+    transition-duration: $animation-dur;
+    filter: none;
+  }
+}
+
+a:link {
+  text-decoration: none;
+}
+

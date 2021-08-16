@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../style/Nav.scss';
 
 const Nav = () => (
-  <nav>
+  <nav className="sticky-top">
     <Link to="/">
       <h1>Home</h1>
     </Link>

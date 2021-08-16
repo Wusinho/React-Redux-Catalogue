@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../style/Champ.scss';
 
 function Champ({ champ, img }) {
   const char = Object.entries(champ).map((item) => (item[1]));
@@ -11,7 +12,7 @@ function Champ({ champ, img }) {
       style={{
         backgroundImage: getPicture(),
       }}
-      className="card"
+      className="card champ__card border-0 rounded-0"
     >
       <div
         className="card-body"
