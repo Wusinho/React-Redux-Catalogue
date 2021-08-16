@@ -1,3 +1,5 @@
+@import './globals.scss';
+
 .navbar {
   display: flex;
   justify-content: center;
@@ -14,7 +16,10 @@
 
 ul {
   font-size: 50px;
+  transition-duration: $animation-dur;
   li:hover {
-    text-shadow: 0.5px 0.5px 0.5px white;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    transition-duration: $animation-dur;
   }
 }

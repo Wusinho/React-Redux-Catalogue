@@ -1,6 +1,6 @@
 # React - Redux Catalogue
 
-It is catalogue using React and Redux
+It is game catalogue using React and Redux, It has a home page with information, and on the navbar it is possible see all the champion in the game League of Legends, it is possible to see a specific champion with a small description.
 
 ![image]()
 
