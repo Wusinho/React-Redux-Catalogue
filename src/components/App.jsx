@@ -7,6 +7,7 @@ import Home from './Home';
 import BookList from './BooksList';
 import Nav from './Nav';
 import Item from './Item';
+import '../style/App.scss';
 
 const store = configureStoreApp();
 

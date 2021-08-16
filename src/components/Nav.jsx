@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 import '../style/Nav.scss';
 
 const Nav = () => (
-  <nav className="sticky-top">
-    <Link to="/">
-      <h1>Home</h1>
-    </Link>
+  <nav className="sticky-top navbar">
     <ul className="nav-links">
+      <Link to="/">
+        <li>Home</li>
+      </Link>
       <Link to="/shop">
         <li>Shop</li>
       </Link>
