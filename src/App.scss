@@ -25,16 +25,26 @@ $reactColor: #A8D145;
   max-width: 100%;
   min-width: 300px;
   height: 300px;
+  // border: 1px solid black;
+}
+
+.card-body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   transition-duration: 800ms;
   border: none;
+  // backdrop-filter: opacity(90%);
 }
 
-.book__card:hover {
+.card-body:hover {
   background-position: top;
   transition-duration: 800ms;
+  filter: none;
+}
+
+.card-body {
+  filter: blur(1px);
 }
 
 h5,
