@@ -10,18 +10,18 @@ const BooksList = () => {
 
   const selectedCat = (category) => {
     if (category === 'All') {
-      <Book books={books} />;
-      console.log(books);
+      return <Book books={books} />;
     }
-    // const getBooks = Object.entries(books).map((item) => (item[1]));
-    // const filterbooks = getBooks.filter((book) => book.tags === category);
-    // return filterbooks.map((books) => <Book books={books} />);
+    const getBooks = Object.entries(books).map((item) => item[1]);
+    const filterbooks = getBooks.filter(
+      (book) => book.tags[0] === category || book.tags[1] === category,
+    );
+    return <Book books={filterbooks} />;
   };
 
   return (
-    < >
-      { loadingState ? <Loading /> : selectedCat(selectedCategory)}
-      {/* { loadingState ? <Loading /> : <Book books={books} />} */}
+    <>
+      {loadingState ? <Loading /> : selectedCat(selectedCategory)}
     </>
   );
 };

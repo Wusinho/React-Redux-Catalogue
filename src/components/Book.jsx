@@ -5,7 +5,6 @@ const getPicture = (champ) => `url("https:ddragon.leagueoflegends.com/cdn/img/ch
 
 const Book = ({ books }) => {
   const getBooks = Object.entries(books).map((item) => (item[1]));
-  console.log(getBooks);
 
   return getBooks.map((book) => (
     <div
