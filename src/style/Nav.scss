@@ -16,10 +16,12 @@ ul {
   font-size: 30px;
   font-weight: bold;
   font-family: $font-title;
+
   li,
   .card__link {
     @include text;
   }
+
   li:hover,
   .card__link:hover {
     @include textHover;

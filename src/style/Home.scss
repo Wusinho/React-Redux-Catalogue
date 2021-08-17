@@ -1,7 +1,6 @@
 @import './globals.scss';
 
 .home {
-  background-color: none;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,11 +11,12 @@
   padding: 20px;
   width: 70%;
   height: 60vh;
-  background-color:  rgba(194, 194, 194, 0.7);
+  background-color: rgba(194, 194, 194, 0.7);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+
   h5,
   h2,
   h3,
@@ -24,18 +24,20 @@
     color: white;
     font-size: 1.3rem;
   }
+
   ul {
-  list-style: none;
+    list-style: none;
   }
+
   .link {
     color: white;
   }
+
   .card__link {
-    @include text
-  }
-  .card__link:hover{
-    @include textHover
+    @include text;
   }
 
+  .card__link:hover {
+    @include textHover;
+  }
 }
-

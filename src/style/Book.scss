@@ -2,30 +2,33 @@
 
 .link__card {
   height: 300px;
-  background-color: none;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   transition-duration: $animation-dur;
   border: none;
   filter: blur(1px);
+
   h5,
   h2 {
-  color: white;
-  font-family: $font-title;
-  animation: moveAnim .3s alternate 1;
+    color: white;
+    font-family: $font-title;
+    animation: moveAnim 0.3s alternate 1;
   }
+
   &:hover {
     background-position: top;
     transition-duration: $animation-dur;
     filter: none;
   }
-  h2{
+
+  h2 {
     transform: translateX(150%);
     font-size: 3rem;
     text-shadow: 4px 4px 4px #2c394b;
   }
-  h5{
+
+  h5 {
     font-size: 1.5rem;
     width: 80%;
   }
@@ -39,9 +42,10 @@ a:link {
   transition-duration: $animation-dur;
   overflow: hidden;
   height: 250px;
+
   &:hover {
-  transition-duration: $animation-dur;
-  transform: translate(10%, 25%);
+    transition-duration: $animation-dur;
+    transform: translate(10%, 25%);
   }
 }
 

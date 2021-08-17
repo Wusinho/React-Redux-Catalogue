@@ -3,14 +3,14 @@
 
 $animation-dur: 800ms;
 $font-title: 'Roboto', sans-serif;
-$font-text: 'Roboto Mono', monospace;;
+$font-text: 'Roboto Mono', monospace;
 
 @mixin text {
   transition-duration: $animation-dur;
   color: #0548fb;
 }
 
-@mixin textHover{
+@mixin textHover {
   color: #fd14f9;
   text-shadow: 1px 1px 1px black;
   transition-duration: $animation-dur;
