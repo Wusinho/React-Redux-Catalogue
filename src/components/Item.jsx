@@ -28,7 +28,7 @@ const Item = ({ match }) => {
   }, []);
 
   return (
-    <div>
+    <div className="champ__container">
       { char && img ? <Champ champ={char} img={img} /> : <Loading /> }
     </div>
   );

@@ -2,7 +2,6 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import categories from './categories';
 import changeFilter from '../store/filteractions';
-import '../style/Category.scss';
 
 const Navbar = () => {
   const dispatch = useDispatch();

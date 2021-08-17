@@ -21,6 +21,10 @@ function Champ({ champ, img }) {
         <h5 className="card-title">{demacia.title}</h5>
         <h2 className="card-title">{demacia.name}</h2>
         <p className="card-title">{demacia.lore}</p>
+        <div className="champ__tips">
+          <div className="card-title">{demacia.allytips}</div>
+          <div className="card-title">{demacia.enemytips}</div>
+        </div>
       </div>
 
     </div>
