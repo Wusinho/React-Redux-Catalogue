@@ -1,3 +1,29 @@
 .home {
-  height: 1500px;
+  background-color: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.card-home {
+  padding: 20px;
+  width: 800px;
+  background-color:  rgba(90, 99, 141, 0.3);
+  
+  border-radius: 10px;
+  h5,
+  h2,
+  h3,
+  p {
+    color: white;
+    font-size: 1.3rem;
+  }
+  ul {
+  list-style: none;
+  }
+  .link {
+    color: white;
+  }
+
+}
+

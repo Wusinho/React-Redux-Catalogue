@@ -16,9 +16,12 @@
 
 ul {
   font-size: 50px;
-  transition-duration: $animation-dur;
+  li {
+    transition-duration: $animation-dur;
+    color: #0548fb;
+  }
   li:hover {
-    color: white;
+    color: #fd14f9;
     text-shadow: 1px 1px 1px black;
     transition-duration: $animation-dur;
   }
