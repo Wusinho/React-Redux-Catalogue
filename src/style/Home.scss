@@ -1,3 +1,5 @@
+@import './globals.scss';
+
 .home {
   background-color: none;
   display: flex;
@@ -27,6 +29,12 @@
   }
   .link {
     color: white;
+  }
+  .card__link {
+    @include text
+  }
+  .card__link:hover{
+    @include textHover
   }
 
 }

@@ -6,7 +6,7 @@ const Home = () => (
     <div className="card-home">
       <h5 className="card-title">
         Hello my name is
-        <a href="https://github.com/Wusinho" target="_blank" rel="noreferrer"> Heber Lazo</a>
+        <a className="card__link" href="https://github.com/Wusinho" target="_blank" rel="noreferrer"> Heber Lazo</a>
       </h5>
       <p className="card-title">It is game catalogue using React and Redux, It has a home page with information, and on the navbar it is possible see all the champion in the game League of Legends, it is possible to see a specific champion with a small description.</p>
       <h3>Built with</h3>
