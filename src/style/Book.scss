@@ -22,11 +22,12 @@
   }
   h2{
     transform: translateX(150%);
-    font-size: 4rem;
+    font-size: 3rem;
     text-shadow: 4px 4px 4px #2c394b;
   }
   h5{
     font-size: 2rem;
+    width:100%;
   }
 }
 
@@ -37,10 +38,10 @@ a:link {
 .card-body {
   transition-duration: $animation-dur;
   overflow: hidden;
-  height: 200px;
+  height: 250px;
   &:hover {
   transition-duration: $animation-dur;
-  transform: translate(25%, 25%);
+  transform: translate(10%, 25%);
   }
 }
 
