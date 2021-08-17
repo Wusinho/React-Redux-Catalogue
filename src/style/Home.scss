@@ -8,10 +8,13 @@
 
 .card-home {
   padding: 20px;
-  width: 800px;
-  background-color:  rgba(90, 99, 141, 0.7);
-  
+  width: 70%;
+  height: 60vh;
+  background-color:  rgba(194, 194, 194, 0.7);
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   h5,
   h2,
   h3,
