@@ -38,7 +38,3 @@ export const loadBooks = () => apiCallBegan({
   onSuccess: booksReceived.type,
   onError: booksRequestFailed.type,
 });
-
-// export const getBooks = createSelector(
-//   (state) => state.entities.books.list.results,
-// );
