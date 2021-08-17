@@ -14,6 +14,7 @@ const Book = ({ books }) => {
       style={{
         minWidth: '300px',
         backgroundImage: getPicture(book.id),
+        backgroundColor: 'black',
       }}
     >
       <Link to={`/shop/${book.id}`} key={book.id}>
