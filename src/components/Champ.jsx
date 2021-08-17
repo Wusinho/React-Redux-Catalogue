@@ -12,10 +12,10 @@ function Champ({ champ, img }) {
       style={{
         backgroundImage: getPicture(),
       }}
-      className="card champ__card border-0 rounded-0"
+      className="champ__card border-0 rounded-0"
     >
       <div
-        className="card-body"
+        className="champ__body"
         key={demacia.key}
       >
         <h5 className="card-title">{demacia.title}</h5>

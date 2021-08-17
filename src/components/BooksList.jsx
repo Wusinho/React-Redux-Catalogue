@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import Book from './Book';
 import Loading from './Loading';
+import Category from './Category';
 
 const BooksList = () => {
   const books = useSelector((state) => state.entities.books.list);
@@ -20,9 +21,14 @@ const BooksList = () => {
   };
 
   return (
-    <div className="card-group">
-      {loadingState ? <Loading /> : selectedCat(selectedCategory)}
-    </div>
+    <>
+      <div>
+        <Category />
+      </div>
+      <div className="card-group">
+        {loadingState ? <Loading /> : selectedCat(selectedCategory)}
+      </div>
+    </>
   );
 };
 
