@@ -12,11 +12,21 @@
   h5,
   h2 {
   color: white;
+  font-family: $font-title;
+  animation: moveAnim .3s alternate 1;
   }
   &:hover {
     background-position: top;
     transition-duration: $animation-dur;
     filter: none;
+  }
+  h2{
+    transform: translateX(150%);
+    font-size: 4rem;
+    text-shadow: 4px 4px 4px #2c394b;
+  }
+  h5{
+    font-size: 2rem;
   }
 }
 
@@ -24,6 +34,17 @@ a:link {
   text-decoration: none;
 }
 
-.card {
-  background-color: none;
+.card-body {
+  transition-duration: $animation-dur;
+  overflow: hidden;
+  height: 200px;
+  &:hover {
+  transition-duration: $animation-dur;
+  transform: translate(25%, 25%);
+  }
+}
+
+.card-body:hover > h2 {
+  transform: translateX(0%);
+  transition-duration: $animation-dur;
 }
