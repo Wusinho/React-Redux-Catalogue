@@ -1,21 +1,21 @@
 @import './globals.scss';
 
 .navbar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 0 5%;
+  height: 5vh;
 }
 
 .nav-links {
-  width: 80%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   list-style: none;
 }
 
 ul {
-  font-size: 50px;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: $font-title;
   li {
     transition-duration: $animation-dur;
     color: #0548fb;
