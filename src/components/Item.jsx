@@ -23,7 +23,7 @@ const Item = ({ match }) => {
     const data = await fetch(
       `http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${match.params.id}_0.jpg`,
     );
-    setImg(data.url);
+    setImg(data);
   };
 
   useEffect(() => {
