@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import configureStoreApp from '../store/configureStore';
-import { loadBooks } from '../store/books';
+import { loadchamps } from '../store/books';
 import Home from './Home';
 import BookList from './BooksList';
 import Nav from './Nav';
@@ -11,7 +11,7 @@ import '../style/App.scss';
 
 const store = configureStoreApp();
 
-store.dispatch(loadBooks());
+store.dispatch(loadchamps());
 
 const App = () => (
   <Provider store={store}>

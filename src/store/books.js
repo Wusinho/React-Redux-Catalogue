@@ -2,39 +2,39 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { apiCallBegan } from './api';
 
-export const bookSlice = createSlice({
-  name: 'books',
+export const champSlice = createSlice({
+  name: 'champs',
   initialState: {
     loading: false,
     list: {},
   },
   reducers: {
-    booksRequested: (books) => {
-      books.loading = true;
+    champsRequested: (champs) => {
+      champs.loading = true;
     },
-    booksReceived: (books, action) => {
-      books.list = action.payload;
-      books.loading = false;
+    champsReceived: (champs, action) => {
+      champs.list = action.payload;
+      champs.loading = false;
     },
-    booksRequestFailed: (books) => {
-      books.loading = false;
+    champsRequestFailed: (champs) => {
+      champs.loading = false;
     },
   },
 });
 
 export const {
-  booksReceived,
-  booksRequested,
-  booksRequestFailed,
-} = bookSlice.actions;
+  champsReceived,
+  champsRequested,
+  champsRequestFailed,
+} = champSlice.actions;
 
-export default bookSlice.reducer;
+export default champSlice.reducer;
 
-const url = '/books';
+const url = '/champs';
 
-export const loadBooks = () => apiCallBegan({
+export const loadchamps = () => apiCallBegan({
   url,
-  onStart: booksRequested.type,
-  onSuccess: booksReceived.type,
-  onError: booksRequestFailed.type,
+  onStart: champsRequested.type,
+  onSuccess: champsReceived.type,
+  onError: champsRequestFailed.type,
 });

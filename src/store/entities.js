@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import bookReducer from './books';
+import champReducer from './books';
 import filterReducer from './filter';
-import championReducer from './champion';
+import selectReducer from './champion';
 
 export default combineReducers({
-  books: bookReducer,
+  champ: champReducer,
   filter: filterReducer,
-  champion: championReducer,
+  champion: selectReducer,
 });
