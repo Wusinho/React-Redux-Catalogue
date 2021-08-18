@@ -42,10 +42,8 @@ Champ.defaultProps = {
     allytips: '',
     enemytips: '',
   },
-  img: '',
 };
 
 Champ.propTypes = {
   champ: PropTypes.objectOf(Object),
-  img: PropTypes.string,
 };
