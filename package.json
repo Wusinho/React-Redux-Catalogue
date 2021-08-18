@@ -7,9 +7,13 @@
     "build": "webpack --config config/webpack.prod.js",
     "dev": "webpack serve --config config/webpack.dev.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wusinho/React-Redux-Catalogue.git"
+  },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Heber Lazo",
+  "license": "MIT",
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.1",
     "axios": "^0.21.1",
