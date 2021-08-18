@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --config config/webpack.prod.js",
-    "dev": "webpack serve --config config/webpack.dev.js"
+    "dev": "webpack serve --config config/webpack.dev.js",
+    "test": "react-scripts test"
   },
   "repository": {
-    "test": "react-scripts test",
     "type": "git",
     "url": "git+https://github.com/Wusinho/React-Redux-Catalogue.git"
   },
