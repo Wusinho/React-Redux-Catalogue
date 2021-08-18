@@ -20,8 +20,8 @@ const App = () => (
         <Nav />
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/shop" exact component={BookList} />
-          <Route path="/shop/:id" exact component={Item} />
+          <Route path="/champs" exact component={BookList} />
+          <Route path="/champs/:id" exact component={Item} />
         </Switch>
       </div>
     </Router>

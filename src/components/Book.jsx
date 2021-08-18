@@ -17,7 +17,7 @@ const Book = ({ books }) => {
         backgroundColor: 'black',
       }}
     >
-      <Link to={`/shop/${book.id}`} key={book.id}>
+      <Link to={`/champs/${book.id}`} key={book.id}>
 
         <div
           className="card-body"
