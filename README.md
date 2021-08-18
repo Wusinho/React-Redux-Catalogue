@@ -30,7 +30,7 @@ It is game catalogue using React and Redux, It has a home page with information,
 ## How to start the project from your Local environment
 
 - Open your terminal and cd where you want to store the project
-- Run the following command - `git clone `
+- Run the following command - `git clone https://github.com/Wusinho/React-Redux-Catalogue.git `
 - Cd into the directory - `cd fluffy-companion`
 - Run `npm install` to install all dependencies
 - To run the pogram type `npm run dev` on your terminal.
