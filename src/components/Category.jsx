@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import categories from './categories';
+import categoriesList from './categoriesList';
 import changeFilter from '../store/filteractions';
 
 const Navbar = () => {
@@ -17,7 +17,7 @@ const Navbar = () => {
       >
         <option defaultValue disabled>Choose a Category</option>
         <option key="0"> All </option>
-        {categories.map((cat) => (
+        {categoriesList.map((cat) => (
           <option key={cat.id} value={cat.cat}>
             {cat.cat}
           </option>

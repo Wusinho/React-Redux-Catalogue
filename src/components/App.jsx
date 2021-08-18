@@ -6,7 +6,7 @@ import { loadchamps } from '../store/books';
 import Home from './Home';
 import ChampList from './ChampList';
 import Nav from './Nav';
-import Item from './SelectedChamp';
+import SelectedChamp from './SelectedChamp';
 import '../style/App.scss';
 
 const store = configureStoreApp();
@@ -21,7 +21,7 @@ const App = () => (
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/champs" exact component={ChampList} />
-          <Route path="/champs/:id" exact component={Item} />
+          <Route path="/champs/:id" exact component={SelectedChamp} />
         </Switch>
       </div>
     </Router>
