@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import Loading from './Loading';
 import Champ from './Champ';
-import changeFichampSelection from '../store/championaction';
+import champSelected from '../store/championaction';
 
 const SelectedChamp = ({ match }) => {
   const [char, setChar] = useState({});
@@ -14,7 +14,7 @@ const SelectedChamp = ({ match }) => {
     const data = await fetch(
       `http://ddragon.leagueoflegends.com/cdn/11.16.1/data/en_US/champion/${match.params.id}.json`,
     );
-    dispatch(changeFichampSelection(match.params.id));
+    dispatch(champSelected(match.params.id));
     const items = await data.json();
     setChar(items.data);
   };
