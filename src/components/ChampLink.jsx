@@ -3,27 +3,27 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../style/Book.scss';
 
-const Book = ({ books }) => {
-  const getBooks = Object.entries(books).map((item) => (item[1]));
+const ChampLink = ({ champs }) => {
+  const getChamps = Object.entries(champs).map((item) => (item[1]));
   const getPicture = (name) => `url("http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${name}_0.jpg")`;
 
-  return getBooks.map((book) => (
+  return getChamps.map((champ) => (
     <div
       className="card m-2 rounded-3 link__card"
-      key={book.key}
+      key={champ.key}
       style={{
         minWidth: '300px',
-        backgroundImage: getPicture(book.id),
+        backgroundImage: getPicture(champ.id),
         backgroundColor: 'black',
       }}
     >
-      <Link to={`/champs/${book.id}`} key={book.id}>
+      <Link to={`/champs/${champ.id}`} key={champ.id}>
 
         <div
           className="card-body"
         >
-          <h5 className="card-title">{book.title}</h5>
-          <h2 className="card-title">{book.name}</h2>
+          <h5 className="card-title">{champ.title}</h5>
+          <h2 className="card-title">{champ.name}</h2>
         </div>
       </Link>
 
@@ -31,9 +31,9 @@ const Book = ({ books }) => {
   ));
 };
 
-export default Book;
+export default ChampLink;
 
-Book.defaultProps = {
+ChampLink.defaultProps = {
   book: {
     id: '',
     name: '',
@@ -41,6 +41,6 @@ Book.defaultProps = {
   },
 };
 
-Book.propTypes = {
+ChampLink.propTypes = {
   book: PropTypes.objectOf(Object),
 };

@@ -4,9 +4,9 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import configureStoreApp from '../store/configureStore';
 import { loadchamps } from '../store/books';
 import Home from './Home';
-import BookList from './BooksList';
+import ChampList from './ChampList';
 import Nav from './Nav';
-import Item from './Item';
+import Item from './SelectedChamp';
 import '../style/App.scss';
 
 const store = configureStoreApp();
@@ -20,7 +20,7 @@ const App = () => (
         <Nav />
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/champs" exact component={BookList} />
+          <Route path="/champs" exact component={ChampList} />
           <Route path="/champs/:id" exact component={Item} />
         </Switch>
       </div>

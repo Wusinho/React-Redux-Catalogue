@@ -6,5 +6,5 @@ import selectReducer from './champion';
 export default combineReducers({
   champ: champReducer,
   filter: filterReducer,
-  champion: selectReducer,
+  selectedChampion: selectReducer,
 });

@@ -5,12 +5,12 @@ import Loading from './Loading';
 import Champ from './Champ';
 import changeFichampSelection from '../store/championaction';
 
-const Item = ({ match }) => {
+const SelectedChamp = ({ match }) => {
   const [char, setChar] = useState({});
   const [img, setImg] = useState({});
   const dispatch = useDispatch();
 
-  const fetchItem = async () => {
+  const fetchChamp = async () => {
     const data = await fetch(
       `http://ddragon.leagueoflegends.com/cdn/11.16.1/data/en_US/champion/${match.params.id}.json`,
     );
@@ -27,7 +27,7 @@ const Item = ({ match }) => {
   };
 
   useEffect(() => {
-    fetchItem();
+    fetchChamp();
     fetchImg();
   }, []);
 
@@ -38,12 +38,12 @@ const Item = ({ match }) => {
   );
 };
 
-export default Item;
+export default SelectedChamp;
 
-Item.defaultProps = {
+SelectedChamp.defaultProps = {
   match: '',
 };
 
-Item.propTypes = {
+SelectedChamp.propTypes = {
   match: PropTypes.objectOf(Object),
 };
