@@ -37,8 +37,7 @@ Book.defaultProps = {
   book: {
     id: '',
     name: '',
-    status: '',
-    species: '',
+    title: '',
   },
 };
 

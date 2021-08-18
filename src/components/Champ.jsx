@@ -34,9 +34,18 @@ function Champ({ champ, img }) {
 export default Champ;
 
 Champ.defaultProps = {
-  champ: 'hello',
+  champ: {
+    key: '',
+    title: '',
+    name: '',
+    lore: '',
+    allytips: '',
+    enemytips: '',
+  },
+  img: '',
 };
 
 Champ.propTypes = {
   champ: PropTypes.objectOf(Object),
+  img: PropTypes.string,
 };
