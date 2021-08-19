@@ -8,9 +8,10 @@ import configureStoreApp from '../../store/configureStore';
 
 test('renders content', () => {
   const store = configureStoreApp();
-  render(
+  const component = render(
     <Provider store={store}>
       <Category categoriesList={categoriesList} />
     </Provider>,
   );
+  expect(component);
 });
