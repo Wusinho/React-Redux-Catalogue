@@ -39,6 +39,9 @@ It is game catalogue based on #Catalogue of Food, using React and Redux, It has 
 
 - To run the tests `npm run test`
 
+![image](./src/assets/Tests.png)
+
+
 ## Author
 
 👤 **Heber Lazo**
