@@ -9,7 +9,7 @@ const SelectedChamp = ({ match }) => {
   const [char, setChar] = useState({});
   const [img, setImg] = useState({});
   const dispatch = useDispatch();
-  console.log(match);
+
   const fetchChamp = async () => {
     const data = await fetch(
       `http://ddragon.leagueoflegends.com/cdn/11.16.1/data/en_US/champion/${match.params.id}.json`,
