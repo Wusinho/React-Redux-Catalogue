@@ -1,6 +1,6 @@
 # React - Redux Catalogue
 
-It is game catalogue using React and Redux, It has a home page with information, and on the navbar it is possible see all the champion in the game League of Legends, it is possible to see a specific champion with a small description.
+It is game catalogue based on #Catalogue of Food, using React and Redux, It has a home page with information, and on the navbar it is possible see all the champion in the game League of Legends, it is possible to see a specific champion with a small description.
 
 ## WebSite Sections
 - Homepage, there is a small description of the project.
@@ -15,6 +15,7 @@ It is game catalogue using React and Redux, It has a home page with information,
 
 [live demo](https://611c155ea8618b0008ba97ff--hungry-tereshkova-d0e975.netlify.app/)
 - if there are any problems loading the page, it is necessary to allow it in the settings of the browser.
+- Go to Settings > Site Settings > Insecure Content > Add (the link demo)
 
 
 ## Built With
