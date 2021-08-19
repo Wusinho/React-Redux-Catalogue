@@ -36,6 +36,7 @@ It is game catalogue using React and Redux, It has a home page with information,
 - To run the pogram type `npm run dev` on your terminal.
 - By default it will open in firefox, however you can  open it in another browser with `http://localhost:3000/`
 
+- To run the tests `npm run test`
 
 ## Author
 
