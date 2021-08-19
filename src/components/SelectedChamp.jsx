@@ -18,7 +18,7 @@ const SelectedChamp = ({ match }) => {
     ).then((response) => {
       const res = response.data;
       setChar(res.data);
-    }).catch((err) => { console.error(err.message); });
+    }).catch((err) => { setChar(err.message); });
     dispatch(champSelected(ID));
   };
 
