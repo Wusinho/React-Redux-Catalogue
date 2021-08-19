@@ -1,9 +1,9 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import categoriesList from './categoriesList';
+import PropTypes from 'prop-types';
 import changeFilter from '../store/filteractions';
 
-const Navbar = () => {
+const Category = ({ categoriesList }) => {
   const dispatch = useDispatch();
   const handleFilterCHange = (e) => {
     dispatch(changeFilter(e.target.value));
@@ -27,4 +27,15 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Category;
+
+Category.defaultProps = {
+  categoriesList: {
+    cat: '',
+    id: '',
+  },
+};
+
+Category.propTypes = {
+  categoriesList: PropTypes.arrayOf(Object),
+};

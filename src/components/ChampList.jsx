@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import ChampLink from './ChampLink';
 import Loading from './Loading';
 import Category from './Category';
+import categoriesList from './categoriesList';
 
 const ChampList = () => {
   const champs = useSelector((state) => state.entities.champ.list);
@@ -23,7 +24,7 @@ const ChampList = () => {
   return (
     <>
       <div>
-        <Category />
+        <Category categoriesList={categoriesList} />
       </div>
       <div className="card-group">
         {loadingState ? <Loading /> : selectedCat(selectedCategory)}
