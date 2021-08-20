@@ -1,6 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { render } from '@testing-library/react';
+import { act, render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import SelectedChamp from '../../components/SelectedChamp';
 import configureStoreApp from '../../store/configureStore';
@@ -16,12 +16,16 @@ test('renders content', () => {
       id: 'Ahri',
     },
   };
-  const component = render(
-    <Provider store={store}>
-      <SelectedChamp match={match} />
-    </Provider>,
-  );
-  expect(component);
+
+  act(() => {
+    render(
+      <Provider store={store}>
+        <SelectedChamp match={match} />
+      </Provider>,
+    );
+  });
+
+  // expect(component);
 });
 
 // test('renders content', () => {

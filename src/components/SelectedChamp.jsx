@@ -9,7 +9,6 @@ import champSelected from '../store/championaction';
 const SelectedChamp = ({ match }) => {
   const ID = match.params.id;
   const [char, setChar] = useState({});
-  const [img, setImg] = useState({});
   const dispatch = useDispatch();
 
   const fetchChamp = async () => {
@@ -22,21 +21,13 @@ const SelectedChamp = ({ match }) => {
     dispatch(champSelected(ID));
   };
 
-  const fetchImg = async () => {
-    const data = await fetch(
-      `http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${ID}_0.jpg`,
-    );
-    setImg(data);
-  };
-
   useEffect(() => {
     fetchChamp();
-    fetchImg();
   }, []);
 
   return (
     <div className="champ__container">
-      { char && img ? <Champ champ={char} img={img} /> : <Loading /> }
+      { char ? <Champ champ={char} /> : <Loading /> }
     </div>
   );
 };

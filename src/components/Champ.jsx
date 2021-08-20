@@ -2,15 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import '../style/Champ.scss';
 
-function Champ({ champ, img }) {
+function Champ({ champ }) {
   const char = Object.entries(champ).map((item) => (item[1]));
-  const getPicture = () => `url("${img.url}")`;
+  const getPicture = (name) => `url("http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${name}_0.jpg")`;
 
   return char.map((demacia) => (
     <div
       key={demacia.key}
       style={{
-        backgroundImage: getPicture(),
+        backgroundImage: getPicture(demacia.id),
       }}
       className="champ__card border-0 rounded-0"
     >
@@ -42,10 +42,8 @@ Champ.defaultProps = {
     allytips: '',
     enemytips: '',
   },
-  img: '',
 };
 
 Champ.propTypes = {
   champ: PropTypes.objectOf(Object),
-  img: PropTypes.objectOf(Object),
 };
