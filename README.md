@@ -14,8 +14,9 @@ It is game catalogue based on #Catalogue of Recipes, using React and Redux, It h
 ## Live demo
 
 [live demo](https://611c155ea8618b0008ba97ff--hungry-tereshkova-d0e975.netlify.app/)
-- if there are any problems loading the page, it is necessary to allow it in the settings of the browser.
-- Go to Settings > Site Settings > Insecure Content > Add (the link demo)
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/87e2870c-fd49-4ded-b5c4-cd4853958e8b/deploy-status)](https://app.netlify.com/sites/hungry-tereshkova-d0e975/deploys)
+
 
 
 ## Built With
