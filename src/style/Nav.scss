@@ -1,0 +1,29 @@
+@import './globals.scss';
+
+.navbar {
+  padding: 0 5%;
+  height: 5vh;
+}
+
+.nav-links {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+ul {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: $font-title;
+
+  li,
+  .card__link {
+    @include text;
+  }
+
+  li:hover,
+  .card__link:hover {
+    @include textHover;
+  }
+}

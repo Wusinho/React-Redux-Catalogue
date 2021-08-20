@@ -1,0 +1,53 @@
+@import "./globals.scss";
+
+.champ__container {
+  height: 95vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.champ__card {
+  height: 80vh;
+  width: 85%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.champ__body {
+  background-color: rgba(194, 194, 194, 0.7);
+  padding: 50px 20px;
+  text-shadow: 2px 2px 2px rgb(184, 184, 184);
+
+  h2,
+  h5,
+  p {
+    color: white;
+    font-family: $font-title;
+  }
+
+  p {
+    width: 100%;
+    color: black;
+    font-family: $font-text;
+  }
+}
+
+.champ__tips {
+  margin-top: 20px;
+  display: flex;
+
+  div {
+    font-family: $font-text;
+    padding: 0 25px;
+    color: black;
+    font-size: 1.2rem;
+  }
+}
