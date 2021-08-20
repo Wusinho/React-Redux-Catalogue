@@ -4,16 +4,13 @@ import { Link } from 'react-router-dom';
 import '../style/Book.scss';
 
 const ChampLink = ({ champs }) => {
-  if (typeof champs === 'undefined') return;
-
   const getChamps = Object.entries(champs).map((item) => (item[1]));
   const getPicture = (name) => `url("http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${name}_0.jpg")`;
 
-  // eslint-disable-next-line consistent-return
   return getChamps.map((champ) => (
     <div
-      className="card m-2 rounded-3 link__card"
       key={champ.key}
+      className="card m-2 rounded-3 link__card"
       style={{
         minWidth: '300px',
         backgroundImage: getPicture(champ.id),

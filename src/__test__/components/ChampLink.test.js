@@ -11,11 +11,13 @@ describe('Champ', () => {
         blur: 'Something',
         id: 'Aatrox',
         title: 'the Dark',
+        key: 2,
       },
       Ahri: {
         blur: 'Something',
         id: 'Ahri',
         title: 'the Fox',
+        key: 1,
       },
     };
     const element = render(
