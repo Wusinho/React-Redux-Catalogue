@@ -4,7 +4,7 @@ import '../style/Champ.scss';
 
 function Champ({ champ }) {
   const char = Object.entries(champ).map((item) => (item[1]));
-  const getPicture = (name) => `url("http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${name}_0.jpg")`;
+  const getPicture = (name) => `url("https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${name}_0.jpg")`;
 
   return char.map((demacia) => (
     <div

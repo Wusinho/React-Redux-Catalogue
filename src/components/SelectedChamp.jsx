@@ -13,7 +13,7 @@ const SelectedChamp = ({ match }) => {
 
   const fetchChamp = async () => {
     axios.get(
-      `http://ddragon.leagueoflegends.com/cdn/11.16.1/data/en_US/champion/${ID}.json`,
+      `https://ddragon.leagueoflegends.com/cdn/11.16.1/data/en_US/champion/${ID}.json`,
     ).then((response) => {
       const res = response.data;
       setChar(res.data);
