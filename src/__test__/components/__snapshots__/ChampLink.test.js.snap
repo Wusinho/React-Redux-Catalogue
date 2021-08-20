@@ -28,10 +28,10 @@ Object {
       </div>
       <div
         class="card m-2 rounded-3 link__card"
-        style="min-width: 300px; background-image: url(http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Aatrox_0.jpg); background-color: black;"
+        style="min-width: 300px; background-image: url(http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Ahri_0.jpg); background-color: black;"
       >
         <a
-          href="/champs/Aatrox"
+          href="/champs/Ahri"
         >
           <div
             class="card-body"
@@ -73,10 +73,10 @@ Object {
     </div>
     <div
       class="card m-2 rounded-3 link__card"
-      style="min-width: 300px; background-image: url(http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Aatrox_0.jpg); background-color: black;"
+      style="min-width: 300px; background-image: url(http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Ahri_0.jpg); background-color: black;"
     >
       <a
-        href="/champs/Aatrox"
+        href="/champs/Ahri"
       >
         <div
           class="card-body"

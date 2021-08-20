@@ -20,7 +20,7 @@ const ChampLink = ({ champs }) => {
         backgroundColor: 'black',
       }}
     >
-      <Link to={`/champs/${champ.id}`} key={champ.id}>
+      <Link to={`/champs/${champ.id}`} key={champ.key}>
 
         <div
           className="card-body"

@@ -14,7 +14,7 @@ describe('Champ', () => {
       },
       Ahri: {
         blur: 'Something',
-        id: 'Aatrox',
+        id: 'Ahri',
         title: 'the Fox',
       },
     };
