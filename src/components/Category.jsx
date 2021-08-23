@@ -1,12 +1,12 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import changeFilter from '../store/filteractions';
 import categoriesList from './categoriesList';
+import { champCategory  } from '../store/books'
 
 const Category = () => {
   const dispatch = useDispatch();
   const handleFilterCHange = (e) => {
-    dispatch(changeFilter(e.target.value));
+    dispatch(champCategory(e.target.value));
   };
 
   return (

@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import axios from 'axios';
 import Loading from './Loading';
 import Champ from './Champ';
-import champSelected from '../store/championaction';
+import { champSelection } from '../store/books'
 
 const SelectedChamp = ({ match }) => {
   const ID = match.params.id;
@@ -18,7 +18,7 @@ const SelectedChamp = ({ match }) => {
       const res = response.data;
       setChar(res.data);
     }).catch((err) => { setChar(err.message); });
-    dispatch(champSelected(ID));
+    dispatch(champSelection(ID));
   };
 
   useEffect(() => {
