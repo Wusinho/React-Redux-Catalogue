@@ -1,6 +1,6 @@
 /* eslint-disable no-param-reassign */
 import { createSlice } from '@reduxjs/toolkit';
-import { apiCallBegan } from './api';
+import { apiCallBegan, champCallBegan } from './api';
 import { createSelector } from 'reselect';
 
 export const champSlice = createSlice({
@@ -10,6 +10,7 @@ export const champSlice = createSlice({
     list: {},
     champSelection: null,
     category: 'All',
+    selected: {},
   },
   reducers: {
     champsRequested: (champs) => {
@@ -27,6 +28,16 @@ export const champSlice = createSlice({
     },
     champCategory: (champs, action) => {
       champs.category = action.payload;
+    },
+    selectedRequested: (champs) =>{
+      champs.loading = true;
+    },
+    selectedReceived: (champs, action) =>{
+      champs.selected = action.payload;
+      champs.loading = false;
+    },
+    slectedRequestFailed: (champs,action)=>{
+      champs.loading = false;
     }
   },
 });
@@ -37,6 +48,9 @@ export const {
   champsRequestFailed,
   champSelection,
   champCategory,
+  selectedRequested,
+  selectedReceived,
+  slectedRequestFailed,
 } = champSlice.actions;
 
 export default champSlice.reducer;
@@ -48,6 +62,14 @@ export const loadchamps = () => apiCallBegan({
   onStart: champsRequested.type,
   onSuccess: champsReceived.type,
   onError: champsRequestFailed.type,
+});
+
+export const loadselected = (ID) => champCallBegan({
+  url,
+  ID: ID,
+  onStart: selectedRequested.type,
+  onSuccess: selectedReceived.type,
+  onError: slectedRequestFailed.type,
 });
 
 export const getChamps = createSelector(

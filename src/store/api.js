@@ -4,7 +4,6 @@ export const apiCallBegan = createAction('api/callBegan');
 export const apiCallSuccess = createAction('api/callSuccess');
 export const apiCallFailed = createAction('api/callFailed');
 
-export const champCallBegan = createAction('champ/callBegan');
-export const champCallSuccess = createAction('champ/callSuccess');
-export const champCallFailed = createAction('champ/callFailed');
-export const bookFilter = createAction('book/bookFiltered');
+export const champCallBegan = createAction('champs/callBegan');
+export const champCallSuccess = createAction('champs/callSuccess');
+export const champCallFailed = createAction('champs/callFailed');

@@ -1,28 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
 import Loading from './Loading';
 import Champ from './Champ';
-import { champSelection } from '../store/books'
+import { champSelection, loadselected } from '../store/books'
 
 const SelectedChamp = ({ match }) => {
   const ID = match.params.id;
-  const [char, setChar] = useState({});
+  const char = useSelector((state) => state.entities.champ.selected);
   const dispatch = useDispatch();
 
-  const fetchChamp = async () => {
-    axios.get(
-      `https://ddragon.leagueoflegends.com/cdn/11.16.1/data/en_US/champion/${ID}.json`,
-    ).then((response) => {
-      const res = response.data;
-      setChar(res.data);
-    }).catch((err) => { setChar(err.message); });
-    dispatch(champSelection(ID));
-  };
-
   useEffect(() => {
-    fetchChamp();
+    dispatch(loadselected(ID));
   }, []);
 
   return (
