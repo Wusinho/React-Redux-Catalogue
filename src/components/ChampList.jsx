@@ -6,9 +6,9 @@ import Category from './Category';
 import { getChamps } from '../store/books';
 
 const ChampList = () => {
-  const loadingState = useSelector((state) => state.entities.champ.loading);
+  const loadingState = useSelector((state) => state.entities.champs.loading);
   const champs = useSelector(getChamps)
-  const selectedCategory = useSelector((state) => state.entities.champ.category);
+  const selectedCategory = useSelector((state) => state.entities.champs.category);
 
   // console.log(champsList)
   const selectedCat = (category) => {

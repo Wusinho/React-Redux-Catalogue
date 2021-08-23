@@ -73,6 +73,6 @@ export const loadselected = (ID) => champCallBegan({
 });
 
 export const getChamps = createSelector(
-  state => state.entities.champ.list,
+  state => state.entities.champs.list,
   (list) => Object.entries(list).map((item) => item[1])
 )

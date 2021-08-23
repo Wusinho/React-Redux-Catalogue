@@ -8,7 +8,7 @@ import { champSelection, loadselected } from '../store/books'
 
 const SelectedChamp = ({ match }) => {
   const ID = match.params.id;
-  const char = useSelector((state) => state.entities.champ.selected);
+  const char = useSelector((state) => state.entities.champs.selected);
   const dispatch = useDispatch();
 
   useEffect(() => {
