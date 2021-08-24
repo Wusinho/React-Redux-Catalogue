@@ -3,18 +3,19 @@ import { useSelector } from 'react-redux';
 import ChampLink from './ChampLink';
 import Loading from './Loading';
 import Category from './Category';
+import { getChamps } from '../store/books';
 
 const ChampList = () => {
-  const champs = useSelector((state) => state.entities.champ.list);
-  const loadingState = useSelector((state) => state.entities.champ.loading);
-  const selectedCategory = useSelector((state) => state.entities.filter);
+  const loadingState = useSelector((state) => state.entities.champs.loading);
+  const champs = useSelector(getChamps)
+  const selectedCategory = useSelector((state) => state.entities.champs.category);
 
+  // console.log(champsList)
   const selectedCat = (category) => {
     if (category === 'All') {
       return <ChampLink champs={champs} />;
     }
-    const getChamps = Object.entries(champs).map((item) => item[1]);
-    const filterCHamps = getChamps.filter(
+    const filterCHamps = champs.filter(
       (champ) => champ.tags[0] === category || champ.tags[1] === category,
     );
     return <ChampLink champs={filterCHamps} />;

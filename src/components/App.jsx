@@ -1,15 +1,13 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import configureStoreApp from '../store/configureStore';
+import store from '../store/configureStore';
 import { loadchamps } from '../store/books';
 import Home from './Home';
 import ChampList from './ChampList';
 import Nav from './Nav';
 import SelectedChamp from './SelectedChamp';
 import '../style/App.scss';
-
-const store = configureStoreApp();
 
 store.dispatch(loadchamps());
 
