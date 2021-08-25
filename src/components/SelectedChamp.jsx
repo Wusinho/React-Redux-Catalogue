@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
-import axios from 'axios';
 import Loading from './Loading';
 import Champ from './Champ';
-import { champSelection, loadselected } from '../store/books'
+import { loadselected } from '../store/books';
 
 const SelectedChamp = ({ match }) => {
   const ID = match.params.id;

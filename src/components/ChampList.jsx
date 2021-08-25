@@ -7,10 +7,9 @@ import { getChamps } from '../store/books';
 
 const ChampList = () => {
   const loadingState = useSelector((state) => state.entities.champs.loading);
-  const champs = useSelector(getChamps)
+  const champs = useSelector(getChamps);
   const selectedCategory = useSelector((state) => state.entities.champs.category);
 
-  // console.log(champsList)
   const selectedCat = (category) => {
     if (category === 'All') {
       return <ChampLink champs={champs} />;

@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 import { createSlice } from '@reduxjs/toolkit';
-import { apiCallBegan, champCallBegan } from './api';
 import { createSelector } from 'reselect';
+import { apiCallBegan, champCallBegan } from './api';
 
 export const champSlice = createSlice({
   name: 'champs',
@@ -23,22 +23,22 @@ export const champSlice = createSlice({
     champsRequestFailed: (champs) => {
       champs.loading = false;
     },
-    champSelection: (champs, action) =>{
+    champSelection: (champs, action) => {
       champs.champSelection = action.payload;
     },
     champCategory: (champs, action) => {
       champs.category = action.payload;
     },
-    selectedRequested: (champs) =>{
+    selectedRequested: (champs) => {
       champs.loading = true;
     },
-    selectedReceived: (champs, action) =>{
+    selectedReceived: (champs, action) => {
       champs.selected = action.payload;
       champs.loading = false;
     },
-    slectedRequestFailed: (champs,action)=>{
+    slectedRequestFailed: (champs) => {
       champs.loading = false;
-    }
+    },
   },
 });
 
@@ -66,13 +66,13 @@ export const loadchamps = () => apiCallBegan({
 
 export const loadselected = (ID) => champCallBegan({
   url,
-  ID: ID,
+  ID,
   onStart: selectedRequested.type,
   onSuccess: selectedReceived.type,
   onError: slectedRequestFailed.type,
 });
 
 export const getChamps = createSelector(
-  state => state.entities.champs.list,
-  (list) => Object.entries(list).map((item) => item[1])
-)
+  (state) => state.entities.champs.list,
+  (list) => Object.entries(list).map((item) => item[1]),
+);

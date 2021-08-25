@@ -7,10 +7,8 @@ const store = configureStore({
   reducer,
   middleware: [
     api,
-    champApi
-  ]
-}
-  
-)
+    champApi,
+  ],
+});
 
 export default store;

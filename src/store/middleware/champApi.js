@@ -5,7 +5,9 @@ import * as actions from '../api';
 const champApi = ({ dispatch }) => (next) => (action) => {
   if (action.type !== actions.champCallBegan.type) return next(action);
 
-  const { ID, onStart, onSuccess, onError } = action.payload;
+  const {
+    ID, onStart, onSuccess, onError,
+  } = action.payload;
 
   if (onStart) dispatch({ type: onStart });
   next(action);
