@@ -11,6 +11,10 @@ const Nav = () => (
       <Link to="/champs">
         <li>Champs</li>
       </Link>
+      <Link to="/registration">
+        <li>Registration</li>
+      </Link>
+
     </ul>
   </nav>
 );
