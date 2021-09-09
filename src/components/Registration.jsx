@@ -7,6 +7,7 @@ const Registration = () => {
     password: '',
     password_confirmation: '',
   });
+  const [response, setResponse] = useState({});
 
   const handleChange = (e) => {
     setData({
@@ -27,13 +28,13 @@ const Registration = () => {
       { headers },
       { mode: 'cors' },
     ).then((response) => {
-      console.log(response.data);
+      setResponse(response.data);
     }).catch((error) => {
-      console.log('registration error', error.message);
+      setResponse(error.message);
     });
     e.preventDefault();
   };
-
+  console.log(response);
   return (
     <form onSubmit={handleSubmit}>
       <h2>Registration</h2>
