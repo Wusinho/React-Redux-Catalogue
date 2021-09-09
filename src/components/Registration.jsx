@@ -8,6 +8,7 @@ const Registration = () => {
     password_confirmation: '',
   });
   const [response, setResponse] = useState({});
+  const [request, setRequest] = useState('');
 
   const handleChange = (e) => {
     setData({
@@ -34,6 +35,7 @@ const Registration = () => {
     });
     e.preventDefault();
   };
+  console.log(request);
   console.log(response);
   return (
     <form onSubmit={handleSubmit}>
@@ -43,6 +45,13 @@ const Registration = () => {
         name="username"
         placeholder="username"
         onChange={handleChange}
+        required
+      />
+      <input
+        type="text"
+        name="request"
+        placeholder="server"
+        onChange={(e) => setRequest(e.target.value)}
         required
       />
       <input
