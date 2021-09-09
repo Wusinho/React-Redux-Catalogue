@@ -27,7 +27,7 @@ const Registration = () => {
       `${request}`,
       data,
       { headers },
-      { mode: 'cors' },
+      // { mode: 'cors' },
     ).then((response) => {
       setResponse(response.data);
       console.log(response);
