@@ -24,19 +24,19 @@ const Registration = () => {
 
     axios.post(
       // 'http://localhost:3000/users',
-      'https://lit-ridge-70863.herokuapp.com/users',
+      `${request}`,
       data,
       { headers },
       { mode: 'cors' },
     ).then((response) => {
       setResponse(response.data);
+      console.log(response);
     }).catch((error) => {
       setResponse(error.message);
+      console.log(response);
     });
     e.preventDefault();
   };
-  console.log(request);
-  console.log(response);
   return (
     <form onSubmit={handleSubmit}>
       <h2>Registration</h2>
