@@ -12,7 +12,7 @@ import Loading from './Loading';
 const AppointmentForm = () => {
   const currentUserID = useSelector(selectCurrentUserID);
 
-  const [appointment, setAppointment] = useState({
+  const [app, setApp] = useState({
     user_id: currentUserID,
     coach_id: '',
     date: '',
@@ -23,16 +23,17 @@ const AppointmentForm = () => {
   const coachList = useSelector(selectCoachList);
 
   const handleSubmit = (e) => {
-    dispatch(setAppointments(appointment));
+    dispatch(setAppointments(app));
     e.preventDefault();
   };
 
   const handleChange = (e) => {
-    setAppointment({
-      ...appointment,
+    setApp({
+      ...app,
       [e.target.name]: e.target.value,
     });
   };
+
   useEffect(() => {
     dispatch(loadcoach(currentUserToken));
   }, []);
