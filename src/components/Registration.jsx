@@ -8,7 +8,6 @@ const Registration = () => {
     password_confirmation: '',
   });
   const [response, setResponse] = useState({});
-  const [request, setRequest] = useState('');
 
   const handleChange = (e) => {
     setData({
@@ -23,8 +22,8 @@ const Registration = () => {
     };
 
     axios.post(
-      // 'http://localhost:3000/users',
-      `${request}`,
+      'http://localhost:3000/users',
+      // 'https://shielded-waters-88645.herokuapp.com/users/',
       data,
       { headers },
       // { mode: 'cors' },
@@ -45,13 +44,6 @@ const Registration = () => {
         name="username"
         placeholder="username"
         onChange={handleChange}
-        required
-      />
-      <input
-        type="text"
-        name="request"
-        placeholder="server"
-        onChange={(e) => setRequest(e.target.value)}
         required
       />
       <input
