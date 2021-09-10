@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { register } from '../store/sessionSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { Redirect } from 'react-router-dom';
+import { register, selectIsLoggedIn } from '../store/sessionSlice';
 
 const Registration = () => {
   const [data, setData] = useState({
@@ -8,6 +9,7 @@ const Registration = () => {
     password: '',
     password_confirmation: '',
   });
+  const loggedIn = useSelector(selectIsLoggedIn);
 
   const dispatch = useDispatch();
 
@@ -17,6 +19,10 @@ const Registration = () => {
       [e.target.name]: e.target.value,
     });
   };
+
+  if (loggedIn) {
+    return <Redirect to="/champs" />;
+  }
 
   const handleSubmit = (e) => {
     dispatch(register(data));
