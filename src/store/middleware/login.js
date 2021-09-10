@@ -3,7 +3,7 @@ import * as actions from '../api';
 
 // eslint-disable-next-line consistent-return
 const login = ({ dispatch }) => (next) => (action) => {
-  if (action.type !== actions.apiCallBegan.type) return next(action);
+  if (action.type !== actions.sessionCallBegan.type) return next(action);
 
   const {
     data, onStart, onSuccess, onError,
@@ -20,11 +20,11 @@ const login = ({ dispatch }) => (next) => (action) => {
       data,
     )
     .then((response) => {
-      dispatch(actions.apiCallSuccess(response));
+      dispatch(actions.sessionCallSuccess(response));
       if (onSuccess) dispatch({ type: onSuccess, payload: response.data });
     })
     .catch((error) => {
-      dispatch(actions.apiCallFailed(error.message));
+      dispatch(actions.sessionCallFailed(error.message));
       if (onError) dispatch({ type: onError, payload: error.message });
     });
 };

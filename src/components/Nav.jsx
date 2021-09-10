@@ -12,6 +12,8 @@ import '../style/Nav.scss';
 const Nav = () => {
   const loggedIn = useSelector(selectIsLoggedIn);
   // const currentUser = useSelector(selectCurrentUser);
+  // const currentUser = useSelector((state) => state.entities;
+  // console.log(currentUser);
   const dispatch = useDispatch();
   const handleLogout = () => {
     dispatch(logOut());
@@ -27,9 +29,15 @@ const Nav = () => {
           <li>Champs</li>
         </Link>
         {loggedIn ? (
-          <li>
-            <button type="button" onClick={handleLogout} className="logout">Log Out</button>
-          </li>
+          <>
+            <li>
+              {/* {currentUser} */}
+              {/* 'hello' */}
+            </li>
+            <li>
+              <button type="button" onClick={handleLogout} className="logout">Log Out</button>
+            </li>
+          </>
         )
           : (
             <>
