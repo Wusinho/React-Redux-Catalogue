@@ -6,6 +6,7 @@ import login from './middleware/login';
 import registration from './middleware/registration';
 import coaches from './middleware/coaches';
 import userAppointments from './middleware/userAppointments';
+import setAppointments from './middleware/setAppointments';
 
 const store = configureStore({
   reducer,
@@ -16,6 +17,7 @@ const store = configureStore({
     registration,
     coaches,
     userAppointments,
+    setAppointments,
   ],
 });
 

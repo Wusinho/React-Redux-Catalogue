@@ -23,3 +23,7 @@ export const coachCallFailed = createAction('coach/callFailed');
 export const appointmentCallBegan = createAction('appointment/callBegan');
 export const appointmentCallSuccess = createAction('appointment/callSuccess');
 export const appointmentCallFailed = createAction('appointment/callFailed');
+
+export const setappointmentCallBegan = createAction('setappointment/callBegan');
+export const setappointmentCallSuccess = createAction('setappointment/callSuccess');
+export const setappointmentCallFailed = createAction('setappointment/callFailed');

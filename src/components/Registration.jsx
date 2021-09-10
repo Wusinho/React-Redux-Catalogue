@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { register } from '../store/sessionSlice';
 
 const Registration = () => {
   const [data, setData] = useState({
@@ -7,7 +8,8 @@ const Registration = () => {
     password: '',
     password_confirmation: '',
   });
-  const [response, setResponse] = useState({});
+
+  const dispatch = useDispatch();
 
   const handleChange = (e) => {
     setData({
@@ -17,23 +19,7 @@ const Registration = () => {
   };
 
   const handleSubmit = (e) => {
-    const headers = {
-      'Access-Control-Allow-Origin': '*',
-    };
-
-    axios.post(
-      'http://localhost:3000/users',
-      // 'https://shielded-waters-88645.herokuapp.com/users/',
-      data,
-      { headers },
-      // { mode: 'cors' },
-    ).then((response) => {
-      setResponse(response.data);
-      console.log(response);
-    }).catch((error) => {
-      setResponse(error.message);
-      console.log(response);
-    });
+    dispatch(register(data));
     e.preventDefault();
   };
   return (
