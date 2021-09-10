@@ -62,11 +62,8 @@ export default AppointmentForm;
 AppointmentForm.defaultProps = {
   coaches: {
     key: '',
-    title: '',
+    country: '',
     name: '',
-    lore: '',
-    allytips: '',
-    enemytips: '',
   },
 };
 
