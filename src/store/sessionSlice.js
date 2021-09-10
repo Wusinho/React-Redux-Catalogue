@@ -49,7 +49,7 @@ export const sessionSlice = createSlice({
       api.loading = true;
     },
     sessionReceived: (api, action) => {
-      api.user = action.payload;
+      api.user = action.payload.user;
       api.token = action.payload.token;
       api.isLoggedIn = action.payload.status;
       api.loading = false;
@@ -94,7 +94,7 @@ export const sessionSlice = createSlice({
   },
 });
 
-export const selectCurrentUser = (state) => state.entities.session.user;
+export const selectCurrentUser = (state) => state.entities.session.user.username;
 export const selectIsLoggedIn = (state) => state.entities.session.isLoggedIn;
 export const {
   signUp,

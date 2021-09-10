@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-  // selectCurrentUser,
+  selectCurrentUser,
   logOut,
   selectIsLoggedIn,
 } from '../store/sessionSlice';
@@ -11,12 +11,12 @@ import '../style/Nav.scss';
 
 const Nav = () => {
   const loggedIn = useSelector(selectIsLoggedIn);
-  // const currentUser = useSelector(selectCurrentUser);
-  // const currentUser = useSelector((state) => state.entities;
-  // console.log(currentUser);
+  const currentUser = useSelector(selectCurrentUser);
   const dispatch = useDispatch();
-  const handleLogout = () => {
+
+  const handleLogout = (e) => {
     dispatch(logOut());
+    e.preventDefault();
   };
 
   return (
@@ -31,7 +31,7 @@ const Nav = () => {
         {loggedIn ? (
           <>
             <li>
-              {/* {currentUser} */}
+              {currentUser}
               {/* 'hello' */}
             </li>
             <li>
