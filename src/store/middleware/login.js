@@ -4,20 +4,20 @@ import * as actions from '../api';
 // eslint-disable-next-line consistent-return
 const signIn = ({ dispatch }) => (next) => (action) => {
   if (action.type !== actions.apiCallBegan.type) return next(action);
+
   const {
     data, onStart, onSuccess, onError,
   } = action.payload;
-  const { username, password } = data;
+
   if (onStart) dispatch({ type: onStart });
+
   next(action);
+
   axios
     .post(
       // "https://shielded-waters-88645.herokuapp.com/login/",
       'http://localhost:3000/login',
-      {
-        username,
-        password,
-      },
+      data,
     )
     .then((response) => {
       dispatch(actions.apiCallSuccess(response));
