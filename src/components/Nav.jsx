@@ -5,6 +5,7 @@ import {
   selectCurrentUser,
   logOut,
   selectIsLoggedIn,
+  loadcoach,
 } from '../store/sessionSlice';
 
 import '../style/Nav.scss';
@@ -19,6 +20,10 @@ const Nav = () => {
     e.preventDefault();
   };
 
+  if (currentUser) {
+    loadcoach();
+  }
+
   return (
     <nav className="sticky-top navbar">
       <ul className="nav-links">
@@ -30,24 +35,23 @@ const Nav = () => {
         </Link>
         {loggedIn ? (
           <>
-            <li>
+            <Link to="/player">
               {currentUser}
-              {/* 'hello' */}
-            </li>
+            </Link>
             <li>
               <button type="button" onClick={handleLogout} className="btn btn-danger">Log Out</button>
             </li>
           </>
         )
           : (
-            <>
+            <div>
               <Link to="/registration">
                 <li>Registration</li>
               </Link>
               <Link to="/sign_in">
                 <li>Sign in</li>
               </Link>
-            </>
+            </div>
           )}
       </ul>
     </nav>

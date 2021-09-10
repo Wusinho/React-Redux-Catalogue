@@ -94,6 +94,8 @@ export const sessionSlice = createSlice({
 });
 
 export const selectCurrentUser = (state) => state.entities.session.user.username;
+export const selectCurrentUserID = (state) => state.entities.session.user.id;
+export const selectCurrentUserToken = (state) => state.entities.session.token;
 export const selectIsLoggedIn = (state) => state.entities.session.isLoggedIn;
 export const {
   signUp,
@@ -151,8 +153,9 @@ export const usersAppointments = () => appointmentCallBegan({
   onError: appointmentRequestFailed.type,
 });
 
-export const setAppointments = () => setappointmentCallBegan({
+export const setAppointments = (data) => setappointmentCallBegan({
   url2,
+  data,
   onStart: setappointmentRequested.type,
   onSuccess: setappointmentReceived.type,
   onError: setappointmentRequestFailed.type,

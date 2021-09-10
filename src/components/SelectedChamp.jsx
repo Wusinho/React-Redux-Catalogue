@@ -17,6 +17,7 @@ const SelectedChamp = ({ match }) => {
   return (
     <div className="champ__container">
       { char ? <Champ champ={char} /> : <Loading /> }
+      <h2>Hello</h2>
     </div>
   );
 };

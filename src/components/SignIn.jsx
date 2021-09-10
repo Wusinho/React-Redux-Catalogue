@@ -21,7 +21,6 @@ const SignIn = () => {
 
   const handleSubmit = (e) => {
     dispatch(signIn(data));
-
     e.preventDefault();
   };
 

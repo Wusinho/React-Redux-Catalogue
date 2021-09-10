@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useSelector } from 'react-redux';
+import { selectCurrentUserToken } from '../sessionSlice';
 import * as actions from '../api';
 
 // eslint-disable-next-line consistent-return
@@ -13,10 +14,10 @@ const coaches = ({ dispatch }) => (next) => (action) => {
   if (onStart) dispatch({ type: onStart });
   next(action);
 
-  const getToken = useSelector((state) => state.entities.session.user.token);
+  const currentUserToken = useSelector(selectCurrentUserToken);
 
   const headers = {
-    Authorization: `Bearer ${getToken}`,
+    Authorization: `Bearer ${currentUserToken}`,
   };
 
   axios

@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useSelector } from 'react-redux';
+import { selectCurrentUserToken } from '../sessionSlice';
 import * as actions from '../api';
 
 // eslint-disable-next-line consistent-return
@@ -7,22 +8,23 @@ const setAppointments = ({ dispatch }) => (next) => (action) => {
   if (action.type !== actions.setappointmentCallBegan.type) return next(action);
 
   const {
-    onStart, onSuccess, onError,
+    data, onStart, onSuccess, onError,
   } = action.payload;
 
   if (onStart) dispatch({ type: onStart });
   next(action);
 
-  const getToken = useSelector((state) => state.entities.session.user.token);
+  const currentUserToken = useSelector(selectCurrentUserToken);
 
   const headers = {
-    Authorization: `Bearer ${getToken}`,
+    Authorization: `Bearer ${currentUserToken}`,
   };
 
   axios
     .post(
       // 'https://shielded-waters-88645.herokuapp.com/appointments',
       'http://localhost:3000/appointments',
+      data,
       headers,
       { mode: 'cors' },
     )

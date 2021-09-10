@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import { register, selectIsLoggedIn } from '../store/sessionSlice';
+import { register, selectIsLoggedIn, loadcoach } from '../store/sessionSlice';
 
 const Registration = () => {
   const [data, setData] = useState({
@@ -26,6 +26,7 @@ const Registration = () => {
 
   const handleSubmit = (e) => {
     dispatch(register(data));
+    dispatch(loadcoach());
     e.preventDefault();
   };
   return (
