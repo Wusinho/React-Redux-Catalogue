@@ -66,7 +66,7 @@ export default sessionSlice.reducer;
 
 const url = '/api';
 
-export const loadapi = (data) => apiCallBegan({
+export const signIn = (data) => apiCallBegan({
   url,
   data,
   onStart: apiRequested.type,

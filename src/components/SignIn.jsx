@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import { signIn, selectIsLoggedIn } from '../store/sessionSlice';
 
 const SignIn = () => {
   const loggedIn = useSelector(selectIsLoggedIn);
@@ -19,7 +20,7 @@ const SignIn = () => {
   };
 
   const handleSubmit = (e) => {
-    dispatch(loadapi(data));
+    dispatch(signIn(data));
 
     e.preventDefault();
   };
