@@ -5,7 +5,6 @@ import {
   selectCurrentUser,
   logOut,
   selectIsLoggedIn,
-  loadcoach,
 } from '../store/sessionSlice';
 
 import '../style/Nav.scss';
@@ -19,10 +18,6 @@ const Nav = () => {
     dispatch(logOut());
     e.preventDefault();
   };
-
-  if (currentUser) {
-    loadcoach();
-  }
 
   return (
     <nav className="sticky-top navbar">

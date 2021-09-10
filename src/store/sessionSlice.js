@@ -97,6 +97,7 @@ export const selectCurrentUser = (state) => state.entities.session.user.username
 export const selectCurrentUserID = (state) => state.entities.session.user.id;
 export const selectCurrentUserToken = (state) => state.entities.session.token;
 export const selectIsLoggedIn = (state) => state.entities.session.isLoggedIn;
+export const selectCoachList = (state) => state.entities.session.coachList;
 export const {
   signUp,
   logOut,
@@ -139,8 +140,9 @@ export const signIn = (data) => sessionCallBegan({
   onError: sessionRequestFailed.type,
 });
 
-export const loadcoach = () => coachCallBegan({
+export const loadcoach = (data) => coachCallBegan({
   url2,
+  data,
   onStart: coachRequested.type,
   onSuccess: coachReceived.type,
   onError: coachRequestFailed.type,

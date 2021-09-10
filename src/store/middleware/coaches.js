@@ -1,6 +1,4 @@
 import axios from 'axios';
-import { useSelector } from 'react-redux';
-import { selectCurrentUserToken } from '../sessionSlice';
 import * as actions from '../api';
 
 // eslint-disable-next-line consistent-return
@@ -14,17 +12,14 @@ const coaches = ({ dispatch }) => (next) => (action) => {
   if (onStart) dispatch({ type: onStart });
   next(action);
 
-  const currentUserToken = useSelector(selectCurrentUserToken);
-
   const headers = {
-    Authorization: `Bearer ${currentUserToken}`,
+    Authorization: `Bearer ${data}`,
   };
 
   axios
     .get(
       // 'https://shielded-waters-88645.herokuapp.com/coaches/',
       'http://localhost:3000/coaches',
-      data,
       { headers },
       { mode: 'cors' },
     )
