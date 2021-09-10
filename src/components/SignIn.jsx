@@ -26,7 +26,7 @@ const SignIn = () => {
   };
 
   if (loggedIn) {
-    return <Redirect to="/dashboard" />;
+    return <Redirect to="/champs" />;
   }
 
   return (

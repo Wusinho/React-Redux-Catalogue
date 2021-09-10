@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import categoriesList from './categoriesList';
-import { champCategory  } from '../store/books'
+import { champCategory } from '../store/books';
 
 const Category = () => {
   const dispatch = useDispatch();
