@@ -1,7 +1,6 @@
 /* eslint-disable no-param-reassign */
 import { createSlice } from '@reduxjs/toolkit';
-import { apiCallBegan, logCallBegan } from './api';
-// import { createSelector } from 'reselect';
+import { apiCallBegan, sessionCallBegan, coachCallBegan } from './api';
 
 export const sessionSlice = createSlice({
   name: 'session',
@@ -11,6 +10,7 @@ export const sessionSlice = createSlice({
     loading: false,
     token: '',
     list: {},
+    coachList: '',
   },
   reducers: {
     signUp: (state, action) => {
@@ -36,14 +36,24 @@ export const sessionSlice = createSlice({
     apiRequestFailed: (api) => {
       api.loading = false;
     },
-    logRequested: (api) => {
+    sessionRequested: (api) => {
       api.loading = true;
     },
-    logReceived: (api, action) => {
+    sessionReceived: (api, action) => {
       api.list = action.payload;
       api.loading = false;
     },
-    logRequestFailed: (api) => {
+    sessionRequestFailed: (api) => {
+      api.loading = false;
+    },
+    coachRequested: (api) => {
+      api.loading = true;
+    },
+    coachReceived: (api, action) => {
+      api.list = action.payload;
+      api.loading = false;
+    },
+    coachRequestFailed: (api) => {
       api.loading = false;
     },
   },
@@ -58,9 +68,12 @@ export const {
   apiRequested,
   apiReceived,
   apiRequestFailed,
-  logReceived,
-  logRequestFailed,
-  logRequested,
+  sessionReceived,
+  sessionRequestFailed,
+  sessionRequested,
+  coachReceived,
+  coachRequestFailed,
+  coachRequested,
 } = sessionSlice.actions;
 export default sessionSlice.reducer;
 
@@ -74,11 +87,18 @@ export const signIn = (data) => apiCallBegan({
   onError: apiRequestFailed.type,
 });
 
-const url2 = '/log';
+const url2 = '/session';
 
-export const loadlogin = () => logCallBegan({
+export const loadsession = () => sessionCallBegan({
   url2,
-  onStart: logRequested.type,
-  onSuccess: logReceived.type,
-  onError: logRequestFailed.type,
+  onStart: sessionRequested.type,
+  onSuccess: sessionReceived.type,
+  onError: sessionRequestFailed.type,
+});
+
+export const loadcoach = () => coachCallBegan({
+  url2,
+  onStart: coachRequested.type,
+  onSuccess: coachReceived.type,
+  onError: coachRequestFailed.type,
 });
