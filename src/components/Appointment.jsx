@@ -10,6 +10,15 @@ import {
 import Loading from './Loading';
 
 const AppointmentForm = () => {
+  const dispatch = useDispatch();
+  const currentUserToken = useSelector(selectCurrentUserToken);
+
+  useEffect(() => {
+    dispatch(loadcoach(currentUserToken));
+  }, []);
+
+  const coachList = useSelector(selectCoachList);
+
   const currentUserID = useSelector(selectCurrentUserID);
 
   const [app, setApp] = useState({
@@ -17,14 +26,9 @@ const AppointmentForm = () => {
     coach_id: '',
     date: '',
   });
-  const dispatch = useDispatch();
-
-  const currentUserToken = useSelector(selectCurrentUserToken);
-  const coachList = useSelector(selectCoachList);
 
   const handleSubmit = (e) => {
     dispatch(setAppointments(app));
-    console.log(app);
     e.preventDefault();
   };
 
@@ -35,12 +39,8 @@ const AppointmentForm = () => {
     });
   };
 
-  useEffect(() => {
-    dispatch(loadcoach(currentUserToken));
-  }, []);
-
   return (
-    <div className="home">
+    <>
       {coachList ? (
         <form onSubmit={handleSubmit}>
           <select
@@ -61,7 +61,7 @@ const AppointmentForm = () => {
         </form>
       )
         : (<Loading />)}
-    </div>
+    </>
   );
 };
 
