@@ -29,7 +29,6 @@ export const sessionSlice = createSlice({
       state.user = action.payload;
     },
     logOut: (state) => {
-      state.user = {};
       state.isLoggedIn = false;
     },
     regRequested: (api) => {
