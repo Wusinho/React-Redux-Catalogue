@@ -18,6 +18,7 @@ export const sessionSlice = createSlice({
     list: '',
     coachList: '',
     usersAppointments: '',
+    setAppointments: '',
     error: '',
   },
   reducers: {
@@ -83,7 +84,7 @@ export const sessionSlice = createSlice({
       api.loading = true;
     },
     setappointmentReceived: (api, action) => {
-      api.list = action.payload;
+      api.setAppointments = action.payload;
       api.loading = false;
     },
     setappointmentRequestFailed: (api, action) => {
@@ -141,9 +142,8 @@ export const signIn = (data) => sessionCallBegan({
   onError: sessionRequestFailed.type,
 });
 
-export const loadcoach = (data) => coachCallBegan({
+export const loadcoach = () => coachCallBegan({
   url2,
-  data,
   onStart: coachRequested.type,
   onSuccess: coachReceived.type,
   onError: coachRequestFailed.type,
@@ -157,7 +157,6 @@ export const usersAppointments = () => appointmentCallBegan({
 });
 
 export const setAppointments = (data) => setappointmentCallBegan({
-  url2,
   data,
   onStart: setappointmentRequested.type,
   onSuccess: setappointmentReceived.type,
