@@ -1,21 +1,17 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { loadcoach, selectCurrentUserToken } from '../store/sessionSlice';
-import Appointment from './Appointment'
+import React from 'react';
+// import React from 'react';
+// import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { isloading } from '../store/sessionSlice';
+import Appointment from './Appointment';
 
 const Player = () => {
   // const [ coaches, setCoaghes ] = useState('');
-  const dispatch = useDispatch();
 
-  const currentUserToken = useSelector(selectCurrentUserToken);
-  const coachList = useSelector((state) => state.entities.session.coachList);
-  // const coachList = useSelector(selectCoachList);
+  // const coachList = useSelector((state) => state.entities.session.coachList);
+  const loaded = useSelector(isloading);
 
-  console.log(coachList);
-
-  useEffect(() => {
-    dispatch(loadcoach(currentUserToken));
-  }, []);
+  console.log(loaded);
 
   return (
     <div className="home">
