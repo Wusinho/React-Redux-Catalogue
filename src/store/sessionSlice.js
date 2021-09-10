@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 import { createSlice } from '@reduxjs/toolkit';
 import {
-  apiCallBegan,
+  regCallBegan,
   sessionCallBegan,
   coachCallBegan,
   appointmentCallBegan,
@@ -120,7 +120,7 @@ export default sessionSlice.reducer;
 
 const url = '/api';
 
-export const register = (data) => apiCallBegan({
+export const register = (data) => regCallBegan({
   url,
   data,
   onStart: regRequested.type,

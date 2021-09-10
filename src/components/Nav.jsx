@@ -27,9 +27,9 @@ const Nav = () => {
           <li>Champs</li>
         </Link>
         {loggedIn ? (
-          <>
+          <li>
             <button type="button" onClick={handleLogout} className="logout">Log Out</button>
-          </>
+          </li>
         )
           : (
             <>
