@@ -10,6 +10,7 @@ export const sessionSlice = createSlice({
     isLoggedIn: false,
     loading: false,
     token: '',
+    list: {},
   },
   reducers: {
     signUp: (state, action) => {
@@ -40,7 +41,6 @@ export const sessionSlice = createSlice({
     },
     logReceived: (api, action) => {
       api.list = action.payload;
-      // api.isLoggedIn = true;
       api.loading = false;
     },
     logRequestFailed: (api) => {
