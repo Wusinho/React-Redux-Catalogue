@@ -75,7 +75,7 @@ export const sessionSlice = createSlice({
       api.usersAppointments = action.payload;
       api.loading = false;
     },
-    appointmenthRequestFailed: (api, action) => {
+    appointmentRequestFailed: (api, action) => {
       api.loading = false;
       api.error = action.payload;
     },
@@ -86,7 +86,7 @@ export const sessionSlice = createSlice({
       api.list = action.payload;
       api.loading = false;
     },
-    setappointmenthRequestFailed: (api, action) => {
+    setappointmentRequestFailed: (api, action) => {
       api.loading = false;
       api.error = action.payload;
     },

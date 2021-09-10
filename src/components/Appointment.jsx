@@ -24,6 +24,7 @@ const AppointmentForm = () => {
 
   const handleSubmit = (e) => {
     dispatch(setAppointments(app));
+    console.log(app);
     e.preventDefault();
   };
 
