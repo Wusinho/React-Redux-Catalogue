@@ -8,18 +8,20 @@ const signIn = ({ dispatch }) => (next) => (action) => {
   const {
     data, onStart, onSuccess, onError,
   } = action.payload;
-  const { username, password, password_confirmation } = data;
   if (onStart) dispatch({ type: onStart });
   next(action);
+
+  const headers = {
+    'Access-Control-Allow-Origin': '*',
+  };
+
   axios
     .post(
       // "https://shielded-waters-88645.herokuapp.com/users/",
       'http://localhost:3000/users',
-      {
-        username,
-        password,
-        password_confirmation,
-      },
+      data,
+      { headers },
+      { mode: 'cors' },
     )
     .then((response) => {
       dispatch(actions.apiCallSuccess(response));
