@@ -3,17 +3,18 @@ import { useSelector } from 'react-redux';
 import * as actions from '../api';
 
 // eslint-disable-next-line consistent-return
-const coaches = ({ dispatch }) => (next) => (action) => {
-  if (action.type !== actions.coachCallBegan.type) return next(action);
+const userAppointments = ({ dispatch }) => (next) => (action) => {
+  if (action.type !== actions.appointmentCallBegan.type) return next(action);
 
   const {
-    data, onStart, onSuccess, onError,
+    onStart, onSuccess, onError,
   } = action.payload;
 
   if (onStart) dispatch({ type: onStart });
   next(action);
 
   const getToken = useSelector((state) => state.entities.session.user.token);
+  const getID = useSelector((state) => state.entities.session.user.user.id);
 
   const headers = {
     Authorization: `Bearer ${getToken}`,
@@ -21,20 +22,19 @@ const coaches = ({ dispatch }) => (next) => (action) => {
 
   axios
     .get(
-      // 'https://shielded-waters-88645.herokuapp.com/coaches/',
-      'http://localhost:3000/coaches',
-      data,
-      { headers },
+      // 'https://shielded-waters-88645.herokuapp.com/user/${getID}',
+      `http://localhost:3000/users/${getID}`,
+      headers,
       { mode: 'cors' },
     )
     .then((response) => {
-      dispatch(actions.coachCallSuccess(response));
+      dispatch(actions.appointmentCallSuccess(response));
       if (onSuccess) dispatch({ type: onSuccess, payload: response.data });
     })
     .catch((error) => {
-      dispatch(actions.coachCallFailed(error.message));
+      dispatch(actions.appointmentCallFailed(error.message));
       if (onError) dispatch({ type: onError, payload: error.message });
     });
 };
 
-export default coaches;
+export default userAppointments;

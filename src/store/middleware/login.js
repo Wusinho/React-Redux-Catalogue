@@ -2,7 +2,7 @@ import axios from 'axios';
 import * as actions from '../api';
 
 // eslint-disable-next-line consistent-return
-const signIn = ({ dispatch }) => (next) => (action) => {
+const login = ({ dispatch }) => (next) => (action) => {
   if (action.type !== actions.apiCallBegan.type) return next(action);
 
   const {
@@ -29,4 +29,4 @@ const signIn = ({ dispatch }) => (next) => (action) => {
     });
 };
 
-export default signIn;
+export default login;

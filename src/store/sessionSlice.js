@@ -24,23 +24,25 @@ export const sessionSlice = createSlice({
       state.user = {};
       state.isLoggedIn = false;
     },
-    apiRequested: (api) => {
+    regRequested: (api) => {
       api.loading = true;
     },
-    apiReceived: (api, action) => {
+    regReceived: (api, action) => {
       api.user = action.payload;
       api.token = action.payload.token;
       api.isLoggedIn = action.payload.status;
       api.loading = false;
     },
-    apiRequestFailed: (api) => {
+    regRequestFailed: (api) => {
       api.loading = false;
     },
     sessionRequested: (api) => {
       api.loading = true;
     },
     sessionReceived: (api, action) => {
-      api.list = action.payload;
+      api.user = action.payload;
+      api.token = action.payload.token;
+      api.isLoggedIn = action.payload.status;
       api.loading = false;
     },
     sessionRequestFailed: (api) => {
@@ -65,9 +67,9 @@ export const {
   signUp,
   logOut,
   editUser,
-  apiRequested,
-  apiReceived,
-  apiRequestFailed,
+  regRequested,
+  regReceived,
+  regRequestFailed,
   sessionReceived,
   sessionRequestFailed,
   sessionRequested,
@@ -79,18 +81,19 @@ export default sessionSlice.reducer;
 
 const url = '/api';
 
-export const signIn = (data) => apiCallBegan({
+export const register = (data) => apiCallBegan({
   url,
   data,
-  onStart: apiRequested.type,
-  onSuccess: apiReceived.type,
-  onError: apiRequestFailed.type,
+  onStart: regRequested.type,
+  onSuccess: regReceived.type,
+  onError: regRequestFailed.type,
 });
 
 const url2 = '/session';
 
-export const loadsession = () => sessionCallBegan({
+export const signIn = (data) => sessionCallBegan({
   url2,
+  data,
   onStart: sessionRequested.type,
   onSuccess: sessionReceived.type,
   onError: sessionRequestFailed.type,
