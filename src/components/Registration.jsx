@@ -29,6 +29,7 @@ const Registration = () => {
     dispatch(loadcoach());
     e.preventDefault();
   };
+
   return (
     <form onSubmit={handleSubmit}>
       <h2>Registration</h2>

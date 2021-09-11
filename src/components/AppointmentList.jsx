@@ -1,22 +1,21 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
 import {
   usersAppointments,
   selectAppointments,
   selectCurrentUserID,
-  selectCurrentUserToken,
 } from '../store/sessionSlice';
 import Card from './Card';
 
-const AppointmentList = () => {
+const AppointmentList = ({ token }) => {
   const dispatch = useDispatch();
 
   const getAppointments = useSelector(selectAppointments);
-  const currentUserToken = useSelector(selectCurrentUserToken);
   const currentUserID = useSelector(selectCurrentUserID);
 
   useEffect(() => {
-    dispatch(usersAppointments(currentUserToken, currentUserID));
+    dispatch(usersAppointments(token, currentUserID));
   }, []);
 
   // console.log(getAppointments);
@@ -29,3 +28,11 @@ const AppointmentList = () => {
 };
 
 export default AppointmentList;
+
+AppointmentList.defaultProps = {
+  token: '',
+};
+
+AppointmentList.propTypes = {
+  token: PropTypes.string,
+};

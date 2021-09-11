@@ -1,20 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Loading from './Loading';
+import PropTypes from 'prop-types';
 import {
   setAppointments,
   selectCurrentUserID,
-  selectCurrentUserToken,
   loadcoach,
-  selectCoachList,
 } from '../store/sessionSlice';
+import Loading from './Loading';
 
-const AppointmentForm = () => {
+const AppointmentForm = ({ coaches, token }) => {
   const dispatch = useDispatch();
 
   const currentUserID = useSelector(selectCurrentUserID);
-  const currentUserToken = useSelector(selectCurrentUserToken);
-  const coaches = useSelector(selectCoachList);
 
   const [app, setApp] = useState({
     user_id: currentUserID,
@@ -23,7 +20,7 @@ const AppointmentForm = () => {
   });
 
   const handleSubmit = (e) => {
-    dispatch(setAppointments(currentUserToken, app));
+    dispatch(setAppointments(token, app));
     e.preventDefault();
   };
 
@@ -35,12 +32,12 @@ const AppointmentForm = () => {
   };
 
   useEffect(() => {
-    dispatch(loadcoach(currentUserToken));
+    dispatch(loadcoach(token));
   }, []);
 
   return (
     <div>
-      {coaches && currentUserToken ? (
+      {coaches && token ? (
         <form onSubmit={handleSubmit}>
           <select
             className="form-control"
@@ -68,3 +65,13 @@ const AppointmentForm = () => {
 };
 
 export default AppointmentForm;
+
+AppointmentForm.defaultProps = {
+  token: '',
+  coaches: '',
+};
+
+AppointmentForm.propTypes = {
+  token: PropTypes.string,
+  coaches: PropTypes.arrayOf(Object),
+};
