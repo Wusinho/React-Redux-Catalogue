@@ -9,8 +9,10 @@ import Card from './Card';
 
 const AppointmentList = ({ token }) => {
   const dispatch = useDispatch();
+  // const [app, setApp] = useState('');
 
   const getAppointments = useSelector(selectAppointments);
+  // setApp(getAppointments);
 
   useEffect(() => {
     dispatch(usersAppointments(token));
