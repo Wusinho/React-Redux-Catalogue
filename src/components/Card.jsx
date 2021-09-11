@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Card({ card }) {
-  // const appCard = Object.entries(card).map((item) => (item[1]));
   return card.map((appointment) => (
     <div
       key={appointment.id}
@@ -31,5 +30,5 @@ Card.defaultProps = {
 };
 
 Card.propTypes = {
-  card: PropTypes.objectOf(Object),
+  card: PropTypes.arrayOf(Object),
 };
