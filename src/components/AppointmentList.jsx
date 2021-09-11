@@ -6,6 +6,7 @@ import {
   selectCurrentUserID,
   selectCurrentUserToken,
 } from '../store/sessionSlice';
+import Card from './Card';
 
 const AppointmentList = () => {
   const dispatch = useDispatch();
@@ -16,15 +17,13 @@ const AppointmentList = () => {
 
   useEffect(() => {
     dispatch(usersAppointments(currentUserToken, currentUserID));
-  });
+  }, []);
 
+  // console.log(getAppointments);
   return (
     <div>
-      {getAppointments.map((app) => (
-        <div key={app.id}>
-          app
-        </div>
-      ))}
+      {getAppointments ? <Card card={getAppointments} /> : null}
+      hello
     </div>
   );
 };
