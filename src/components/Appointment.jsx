@@ -7,11 +7,10 @@ import {
   selectCurrentUserID,
 } from '../store/sessionSlice';
 
-const AppointmentForm = ({ coaches }) => {
+const AppointmentForm = ({ coaches, token }) => {
   const dispatch = useDispatch();
 
   const currentUserID = useSelector(selectCurrentUserID);
-
   const [app, setApp] = useState({
     user_id: currentUserID,
     coach_id: '',
@@ -31,7 +30,7 @@ const AppointmentForm = ({ coaches }) => {
   };
 
   useEffect(() => {
-    dispatch(loadcoach());
+    dispatch(loadcoach(token));
   });
 
   return (
@@ -65,8 +64,10 @@ AppointmentForm.defaultProps = {
     country: '',
     name: '',
   },
+  token: PropTypes.string,
 };
 
 AppointmentForm.propTypes = {
   coaches: PropTypes.objectOf(Object),
+  token: PropTypes.string,
 };

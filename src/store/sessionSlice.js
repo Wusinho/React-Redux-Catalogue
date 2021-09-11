@@ -132,25 +132,21 @@ export const register = (data) => regCallBegan({
   onError: regRequestFailed.type,
 });
 
-const url2 = '/session';
-
 export const signIn = (data) => sessionCallBegan({
-  url2,
   data,
   onStart: sessionRequested.type,
   onSuccess: sessionReceived.type,
   onError: sessionRequestFailed.type,
 });
 
-export const loadcoach = () => coachCallBegan({
-  url2,
+export const loadcoach = (token) => coachCallBegan({
+  token,
   onStart: coachRequested.type,
   onSuccess: coachReceived.type,
   onError: coachRequestFailed.type,
 });
 
 export const usersAppointments = () => appointmentCallBegan({
-  url2,
   onStart: appointmentRequested.type,
   onSuccess: appointmentReceived.type,
   onError: appointmentRequestFailed.type,
