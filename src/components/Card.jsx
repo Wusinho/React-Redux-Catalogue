@@ -17,12 +17,10 @@ export default Card;
 
 Card.defaultProps = {
   card: {
-    key: '',
-    title: '',
-    name: '',
-    lore: '',
-    allytips: '',
-    enemytips: '',
+    id: '',
+    user: '',
+    date: '',
+    coach: '',
   },
 };
 
