@@ -152,7 +152,8 @@ export const usersAppointments = () => appointmentCallBegan({
   onError: appointmentRequestFailed.type,
 });
 
-export const setAppointments = (data) => setappointmentCallBegan({
+export const setAppointments = (token, data) => setappointmentCallBegan({
+  token,
   data,
   onStart: setappointmentRequested.type,
   onSuccess: setappointmentReceived.type,

@@ -1,16 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import {
-  loadcoach,
   setAppointments,
   selectCurrentUserID,
+  selectCurrentUserToken,
 } from '../store/sessionSlice';
 
-const AppointmentForm = ({ coaches, token }) => {
+const AppointmentForm = ({ coaches }) => {
   const dispatch = useDispatch();
 
   const currentUserID = useSelector(selectCurrentUserID);
+  const currentUserToken = useSelector(selectCurrentUserToken);
   const [app, setApp] = useState({
     user_id: currentUserID,
     coach_id: '',
@@ -18,7 +19,7 @@ const AppointmentForm = ({ coaches, token }) => {
   });
 
   const handleSubmit = (e) => {
-    dispatch(setAppointments(app));
+    dispatch(setAppointments(currentUserToken, app));
     e.preventDefault();
   };
 
@@ -28,10 +29,6 @@ const AppointmentForm = ({ coaches, token }) => {
       [e.target.name]: e.target.value,
     });
   };
-
-  useEffect(() => {
-    dispatch(loadcoach(token));
-  });
 
   return (
     <div>
@@ -64,10 +61,8 @@ AppointmentForm.defaultProps = {
     country: '',
     name: '',
   },
-  token: PropTypes.string,
 };
 
 AppointmentForm.propTypes = {
   coaches: PropTypes.objectOf(Object),
-  token: PropTypes.string,
 };
