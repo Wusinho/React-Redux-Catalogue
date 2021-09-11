@@ -6,7 +6,7 @@ const userAppointments = ({ dispatch }) => (next) => (action) => {
   if (action.type !== actions.appointmentCallBegan.type) return next(action);
 
   const {
-    token, userID, onStart, onSuccess, onError,
+    token, onStart, onSuccess, onError,
   } = action.payload;
 
   if (onStart) dispatch({ type: onStart });
@@ -19,7 +19,7 @@ const userAppointments = ({ dispatch }) => (next) => (action) => {
   axios
     .get(
       // 'https://shielded-waters-88645.herokuapp.com/user/${getID}',
-      `http://localhost:3000/users/${userID}`,
+      'http://localhost:3000/appointments/',
       { headers },
       { mode: 'cors' },
     )

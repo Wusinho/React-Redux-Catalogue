@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import {
   usersAppointments,
   selectAppointments,
-  selectCurrentUserID,
 } from '../store/sessionSlice';
 import Card from './Card';
 
@@ -12,13 +11,11 @@ const AppointmentList = ({ token }) => {
   const dispatch = useDispatch();
 
   const getAppointments = useSelector(selectAppointments);
-  const currentUserID = useSelector(selectCurrentUserID);
 
   useEffect(() => {
-    dispatch(usersAppointments(token, currentUserID));
+    dispatch(usersAppointments(token));
   }, []);
 
-  // console.log(getAppointments);
   return (
     <div>
       {getAppointments ? <Card card={getAppointments} /> : null}

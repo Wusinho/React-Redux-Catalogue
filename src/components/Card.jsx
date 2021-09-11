@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function Card({ card }) {
   // const appCard = Object.entries(card).map((item) => (item[1]));
-  return card.appointments.map((appointment) => (
+  return card.map((appointment) => (
     <div
       key={appointment.id}
     >
