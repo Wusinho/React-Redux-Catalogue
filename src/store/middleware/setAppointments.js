@@ -21,7 +21,7 @@ const setAppointments = ({ dispatch }) => (next) => (action) => {
       // 'https://shielded-waters-88645.herokuapp.com/appointments',
       'http://localhost:3000/appointments',
       data,
-      headers,
+      { headers },
       { mode: 'cors' },
     )
     .then((response) => {
