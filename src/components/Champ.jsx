@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import AddCart from './AddCart';
+import { selectedChampTags } from '../store/books';
 import '../style/Champ.scss';
 
 function Champ({ champ }) {
+  const dispatch = useDispatch();
   const char = Object.entries(champ).map((item) => (item[1]));
+  const chartags = Object.entries(champ).map((item) => (item[1].tags));
   const getPicture = (name) => `url("https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${name}_0.jpg")`;
+
+  useEffect(() => {
+    dispatch(selectedChampTags(chartags));
+  });
 
   return char.map((demacia) => (
     <div

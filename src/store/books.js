@@ -9,6 +9,7 @@ export const champSlice = createSlice({
     loading: false,
     list: {},
     champSelection: '',
+    champTags: '',
     category: 'All',
     selected: {},
   },
@@ -39,6 +40,9 @@ export const champSlice = createSlice({
     slectedRequestFailed: (champs) => {
       champs.loading = false;
     },
+    selectedChampTags: (champs, action) => {
+      champs.champTags = action.payload;
+    },
   },
 });
 
@@ -51,6 +55,7 @@ export const {
   selectedRequested,
   selectedReceived,
   slectedRequestFailed,
+  selectedChampTags,
 } = champSlice.actions;
 
 export default champSlice.reducer;
