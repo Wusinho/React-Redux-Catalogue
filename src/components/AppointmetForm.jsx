@@ -6,7 +6,7 @@ import {
   selectCoachList,
   selectCurrentUserToken,
 } from '../store/sessionSlice';
-import { selectCategory, selectChamp } from '../store/books';
+import { selectChamp } from '../store/books';
 
 const modalStyle = {
   overlay: {
@@ -35,10 +35,11 @@ const AppointmetForm = () => {
   };
 
   const dispatch = useDispatch();
-  const role = useSelector(selectCategory);
-  const champion = useSelector(selectChamp);
+  const champ = useSelector(selectChamp);
   const coaches = useSelector(selectCoachList);
   const token = useSelector(selectCurrentUserToken);
+  const champion = Object.entries(champ).map((item) => (item[1].name));
+  const role = Object.entries(champ).map((item) => (item[1].tags));
 
   const [app, setApp] = useState({
     coach_id: '',
