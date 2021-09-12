@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Card({ card }) {
-  return card.map((appointment) => (
-    <div key={appointment.id} className="card">
+function Card({ appointment }) {
+  return appointment.map((app) => (
+    <div key={app.id} className="card m-2 rounded-3 link__card">
       <div className="card-body">
-        <h5 className="card-title">{appointment.user.username}</h5>
-        <h6 className="card-subtitle mb-2 text-muted">{appointment.date}</h6>
-        <p className="card-text">{appointment.coach.name}</p>
+        <h3 className="card-title">{app.user.username}</h3>
+        <h6 className="card-subtitle mb-2 text-muted">{app.date}</h6>
+        <p className="card-text">{app.coach.name}</p>
       </div>
     </div>
   ));

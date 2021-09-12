@@ -17,9 +17,9 @@ const AppointmentList = ({ token }) => {
   }, []);
 
   return (
-    <div>
+    <>
       {getAppointments ? <Card card={getAppointments} /> : null}
-    </div>
+    </>
   );
 };
 

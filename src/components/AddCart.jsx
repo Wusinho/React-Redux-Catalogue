@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
+import AppointmentForm from './AppointmentForm';
 
 const AddCart = () => {
   const [showModal, setShowModal] = useState(false);
+
   const handleCloseModal = () => {
     setShowModal(false);
   };
@@ -40,7 +42,7 @@ const AddCart = () => {
         style={modalStyle}
       >
         <div className="modal-body">
-          <h1>This is inside modal</h1>
+          <AppointmentForm />
           <button type="button" onClick={handleCloseModal}>Cancel</button>
         </div>
       </Modal>

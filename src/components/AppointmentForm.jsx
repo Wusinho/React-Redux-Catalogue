@@ -1,16 +1,24 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import PropTypes from 'prop-types';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   setAppointments,
+  selectCoachList,
+  selectCurrentUserToken,
 } from '../store/sessionSlice';
+import { selectCategory, selectChamp } from '../store/books';
 
-const AppointmentForm = ({ coaches, token }) => {
+const AppointmentForm = () => {
   const dispatch = useDispatch();
+  const role = useSelector(selectCategory);
+  const champion = useSelector(selectChamp);
+  const coaches = useSelector(selectCoachList);
+  const token = useSelector(selectCurrentUserToken);
 
   const [app, setApp] = useState({
     coach_id: '',
     date: '',
+    role,
+    champion,
   });
 
   const handleSubmit = (e) => {
@@ -50,13 +58,3 @@ const AppointmentForm = ({ coaches, token }) => {
 };
 
 export default AppointmentForm;
-
-AppointmentForm.defaultProps = {
-  token: '',
-  coaches: '',
-};
-
-AppointmentForm.propTypes = {
-  token: PropTypes.string,
-  coaches: PropTypes.arrayOf(Object),
-};

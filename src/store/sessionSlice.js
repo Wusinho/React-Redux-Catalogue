@@ -11,11 +11,10 @@ import {
 export const sessionSlice = createSlice({
   name: 'session',
   initialState: {
-    user: '',
+    user: {},
     isLoggedIn: false,
     loading: false,
     token: '',
-    list: '',
     coachList: '',
     usersAppointments: '',
     setAppointments: '',
@@ -25,9 +24,6 @@ export const sessionSlice = createSlice({
     signUp: (state, action) => {
       state.user = action.payload;
       state.isLoggedIn = true;
-    },
-    editUser: (state, action) => {
-      state.user = action.payload;
     },
     logOut: (state) => {
       state.isLoggedIn = false;
@@ -102,7 +98,6 @@ export const selectAppointments = (state) => state.entities.session.usersAppoint
 export const {
   signUp,
   logOut,
-  editUser,
   regRequested,
   regReceived,
   regRequestFailed,

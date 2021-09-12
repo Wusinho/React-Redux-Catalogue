@@ -1,24 +1,24 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import {
-  selectCurrentUserToken,
-  selectCoachList,
-} from '../store/sessionSlice';
-import Appointment from './Appointment';
-import AppointmentList from './AppointmentList';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { selectCurrentUserToken, selectAppointments, usersAppointments } from '../store/sessionSlice';
 import Loading from './Loading';
+import Card from './Card';
 
 const Player = () => {
-  const coaches = useSelector(selectCoachList);
   const token = useSelector(selectCurrentUserToken);
+  const appointment = useSelector(selectAppointments);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(usersAppointments(token));
+  }, []);
 
   return (
     <div className="home">
-      { coaches && token
+      { token
         ? (
-          <div>
-            <Appointment coaches={coaches} token={token} />
-            <AppointmentList token={token} />
+          <div className="card-group">
+            <Card appointment={appointment} />
           </div>
         )
         : <Loading /> }

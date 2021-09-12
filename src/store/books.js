@@ -8,7 +8,7 @@ export const champSlice = createSlice({
   initialState: {
     loading: false,
     list: {},
-    champSelection: null,
+    champSelection: '',
     category: 'All',
     selected: {},
   },
@@ -54,6 +54,9 @@ export const {
 } = champSlice.actions;
 
 export default champSlice.reducer;
+
+export const selectCategory = (state) => state.entities.champs.category;
+export const selectChamp = (state) => state.entities.champs.champSelection;
 
 const url = '/champs';
 
