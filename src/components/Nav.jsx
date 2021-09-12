@@ -21,7 +21,6 @@ const Nav = () => {
     dispatch(logOut());
     e.preventDefault();
   };
-
   useEffect(() => {
     if (loggedIn) {
       dispatch(loadcoach(token));
@@ -40,7 +39,7 @@ const Nav = () => {
         {loggedIn ? (
           <>
             <NavLink to="/player">
-              <li>{currentUser}</li>
+              <li>{currentUser.user}</li>
             </NavLink>
             <li>
               <button type="button" onClick={handleLogout} className="btn btn-danger">Log Out</button>
