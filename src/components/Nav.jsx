@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   selectCurrentUser,
   logOut,
   selectIsLoggedIn,
+  loadcoach,
+  selectCurrentUserToken,
 } from '../store/sessionSlice';
 
 import '../style/Nav.scss';
@@ -12,12 +14,19 @@ import '../style/Nav.scss';
 const Nav = () => {
   const loggedIn = useSelector(selectIsLoggedIn);
   const currentUser = useSelector(selectCurrentUser);
+  const token = useSelector(selectCurrentUserToken);
   const dispatch = useDispatch();
 
   const handleLogout = (e) => {
     dispatch(logOut());
     e.preventDefault();
   };
+
+  useEffect(() => {
+    if (loggedIn) {
+      dispatch(loadcoach(token));
+    }
+  });
 
   return (
     <nav className="sticky-top navbar">

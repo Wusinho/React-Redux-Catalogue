@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import {
-  loadcoach,
   selectCurrentUserToken,
   selectCoachList,
 } from '../store/sessionSlice';
@@ -10,13 +9,8 @@ import AppointmentList from './AppointmentList';
 import Loading from './Loading';
 
 const Player = () => {
-  const dispatch = useDispatch();
   const coaches = useSelector(selectCoachList);
   const token = useSelector(selectCurrentUserToken);
-
-  useEffect(() => {
-    dispatch(loadcoach(token));
-  }, []);
 
   return (
     <div className="home">

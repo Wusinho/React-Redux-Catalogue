@@ -14,7 +14,6 @@ const AppointmentForm = ({ coaches, token }) => {
   });
 
   const handleSubmit = (e) => {
-    console.log(app);
     dispatch(setAppointments(token, app));
     e.preventDefault();
   };
