@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import AddCart from './AddCart';
 import '../style/Champ.scss';
 
 function Champ({ champ }) {
@@ -26,7 +27,7 @@ function Champ({ champ }) {
           <div className="card-title">{demacia.enemytips}</div>
         </div>
       </div>
-
+      <AddCart />
     </div>
   ));
 }
