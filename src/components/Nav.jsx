@@ -31,7 +31,7 @@ const Nav = () => {
         {loggedIn ? (
           <>
             <NavLink to="/player">
-              {currentUser}
+              <li>{currentUser}</li>
             </NavLink>
             <li>
               <button type="button" onClick={handleLogout} className="btn btn-danger">Log Out</button>
