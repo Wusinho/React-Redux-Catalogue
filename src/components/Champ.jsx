@@ -1,19 +1,14 @@
-import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import React from 'react';
 import PropTypes from 'prop-types';
-import AddCart from './AddCart';
-import { selectedChampTags } from '../store/books';
+import { useSelector } from 'react-redux';
+import AppointmetForm from './AppointmetForm';
+import { selectIsLoggedIn } from '../store/sessionSlice';
 import '../style/Champ.scss';
 
 function Champ({ champ }) {
-  const dispatch = useDispatch();
   const char = Object.entries(champ).map((item) => (item[1]));
-  const chartags = Object.entries(champ).map((item) => (item[1].tags));
   const getPicture = (name) => `url("https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${name}_0.jpg")`;
-
-  useEffect(() => {
-    dispatch(selectedChampTags(chartags));
-  });
+  const loggedIn = useSelector(selectIsLoggedIn);
 
   return char.map((demacia) => (
     <div
@@ -35,7 +30,9 @@ function Champ({ champ }) {
           <div className="card-title">{demacia.enemytips}</div>
         </div>
       </div>
-      <AddCart />
+      {
+        loggedIn && <AppointmetForm />
+      }
     </div>
   ));
 }
