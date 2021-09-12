@@ -93,8 +93,7 @@ export const sessionSlice = createSlice({
     },
   },
 });
-export const selectCurrentUser = (state) => state.entities.session.user.username;
-export const selectCurrentUserID = (state) => state.entities.session.user.id;
+export const selectCurrentUser = (state) => state.entities.session.user;
 export const selectCurrentUserToken = (state) => state.entities.session.token;
 export const selectIsLoggedIn = (state) => state.entities.session.isLoggedIn;
 export const selectCoachList = (state) => state.entities.session.coachList;
