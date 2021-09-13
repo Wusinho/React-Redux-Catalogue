@@ -37,11 +37,11 @@ const Nav = () => {
         {loggedIn ? (
           <>
             <NavLink to="/player">
-              <li>My appointments</li>
+              <li>Appointments</li>
             </NavLink>
-            <li>
-              <button type="button" onClick={handleLogout} className="btn btn-danger">Log Out</button>
-            </li>
+            <NavLink to="">
+              <button type="button" onClick={handleLogout} className="button">Log Out</button>
+            </NavLink>
           </>
         )
           : (

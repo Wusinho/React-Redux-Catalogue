@@ -3,7 +3,6 @@
 .navbar {
   padding: 0 5%;
   min-height: 8vh;
-  // max-height: 15vh;
   background-color: black;
 }
 
@@ -12,13 +11,13 @@
   display: flex;
   justify-content: space-between;
   list-style: none;
+  padding: 0px;
 }
 
 ul {
   font-size: 30px;
   font-weight: bold;
   font-family: $font-title;
-
   li,
   .card__link {
     @include text;
