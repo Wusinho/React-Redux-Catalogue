@@ -14,11 +14,11 @@ const Player = () => {
   }, []);
 
   return (
-    <div className="home">
+    <div>
       { token
         ? (
           <div className="card-group">
-            <Card appointment={appointment} />
+            {appointment && <Card appointment={appointment} />}
           </div>
         )
         : <Loading /> }

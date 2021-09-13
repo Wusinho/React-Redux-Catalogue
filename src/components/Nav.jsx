@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-  selectCurrentUser,
   logOut,
   selectIsLoggedIn,
   loadcoach,
@@ -13,7 +12,6 @@ import '../style/Nav.scss';
 
 const Nav = () => {
   const loggedIn = useSelector(selectIsLoggedIn);
-  const currentUser = useSelector(selectCurrentUser);
   const token = useSelector(selectCurrentUserToken);
   const dispatch = useDispatch();
 
@@ -39,7 +37,7 @@ const Nav = () => {
         {loggedIn ? (
           <>
             <NavLink to="/player">
-              <li>{currentUser.user}</li>
+              <li>My appointments</li>
             </NavLink>
             <li>
               <button type="button" onClick={handleLogout} className="btn btn-danger">Log Out</button>

@@ -38,9 +38,8 @@ const AppointmetForm = () => {
   const champ = useSelector(selectChamp);
   const coaches = useSelector(selectCoachList);
   const token = useSelector(selectCurrentUserToken);
-  const champion = Object.entries(champ).map((item) => (item[1].name));
-  const role = Object.entries(champ).map((item) => (item[1].tags));
-
+  const champion = (Object.entries(champ).map((item) => (item[1].name))).toString();
+  const role = (Object.entries(champ).map((item) => (item[1].id))).toString();
   const [app, setApp] = useState({
     coach_id: '',
     date: '',
@@ -50,6 +49,7 @@ const AppointmetForm = () => {
 
   const handleSubmit = (e) => {
     dispatch(setAppointments(token, app));
+    setShowModal(false);
     e.preventDefault();
   };
 
