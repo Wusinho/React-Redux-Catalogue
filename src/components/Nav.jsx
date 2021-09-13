@@ -45,14 +45,9 @@ const Nav = () => {
           </>
         )
           : (
-            <div>
-              <NavLink to="/registration">
-                <li>Registration</li>
-              </NavLink>
-              <NavLink to="/sign_in">
-                <li>Sign in</li>
-              </NavLink>
-            </div>
+            <NavLink to="/sign_in">
+              <li>Sign in</li>
+            </NavLink>
           )}
       </ul>
     </nav>

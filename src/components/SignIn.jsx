@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import { signIn, selectIsLoggedIn } from '../store/sessionSlice';
 import '../style/Signin.scss';
 
@@ -62,6 +62,9 @@ const SignIn = () => {
           </div>
           <button className="btn btn-success" type="submit">Log In</button>
         </form>
+        <Link to="/registration">
+          <li>Registration</li>
+        </Link>
       </div>
     </div>
 
