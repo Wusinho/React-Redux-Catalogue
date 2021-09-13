@@ -7,23 +7,21 @@ import {
   selectCurrentUserToken,
 } from '../store/sessionSlice';
 import { selectChamp } from '../store/books';
+import '../style/Signin.scss';
 
 const modalStyle = {
   overlay: {
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    backgroundColor: 'rgba(0,0,0,0.85)',
+    'margin-top': '30%',
+    height: '50%',
+    backgroundColor: 'none',
+    border: 'none',
   },
   content: {
-    position: 'absolute',
-    top: '15rem',
-    left: '5rem',
-    right: '5rem',
-    bottom: '5rem',
-    backgroundColor: 'paleturquoise',
-    borderRadius: '1rem',
-    padding: '1.5rem',
+    backgroundColor: 'rgba(194, 194, 194, 0.8)',
+    'max-width': '50%',
+    'min-width': '100%',
+    border: 'none',
+    height: '310px',
   },
 };
 
@@ -77,26 +75,32 @@ const AppointmetForm = () => {
         shouldCloseOnOverlayClick
         style={modalStyle}
       >
-        <div className="modal-body">
-          <form onSubmit={handleSubmit}>
-            <select
-              className="form-control"
-              onChange={handleChange}
-              name="coach_id"
-            >
-              <option key="0" disabled>
-                Choose
-              </option>
-              {coaches.map((cat) => (
-                <option key={cat.id} value={cat.id}>
-                  {cat.country}
+        <div className="">
+          <form onSubmit={handleSubmit} className="login">
+            <label htmlFor="coach_id" className="mb-3">
+              Select a Coach
+              <select
+                className="form-control"
+                onChange={handleChange}
+                name="coach_id"
+              >
+                <option key="0" disabled>
+                  Choose
                 </option>
-              ))}
-            </select>
-            <input type="date" name="date" onChange={handleChange} />
-            <button type="submit">Add booking</button>
+                {coaches.map((cat) => (
+                  <option key={cat.id} value={cat.id}>
+                    {cat.country}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <label htmlFor="date" className="mb-3">
+              Select a date for the appointment
+              <input type="date" name="date" onChange={handleChange} className="form-control" />
+            </label>
+            <button type="submit" className="button">Add booking</button>
           </form>
-          <button type="button" onClick={handleCloseModal}>
+          <button type="button" className="button" onClick={handleCloseModal}>
             Cancel
           </button>
         </div>
