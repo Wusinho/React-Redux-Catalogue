@@ -5,7 +5,7 @@ $animation-dur: 800ms;
 $font-title: 'Roboto', sans-serif;
 $font-text: 'Roboto Mono', monospace;
 $color-blue: #0548fb;
-$color-pink: #fd14f9;;
+$color-pink: #fd14f9;
 
 @mixin text {
   transition-duration: $animation-dur;

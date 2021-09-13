@@ -11,13 +11,14 @@
   display: flex;
   justify-content: space-between;
   list-style: none;
-  padding: 0px;
+  padding: 0;
 }
 
 ul {
   font-size: 30px;
   font-weight: bold;
   font-family: $font-title;
+
   li,
   .card__link {
     @include text;
