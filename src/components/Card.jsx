@@ -9,14 +9,15 @@ function Card({ appointment }) {
       className="card m-2 rounded-3 link__card"
       style={{
         minWidth: '300px',
-        // width: '100%',
         backgroundColor: 'black',
         backgroundImage: getPicture(app.role),
       }}
     >
       <div className="card-body">
         <h5 className="card-title">{app.champion}</h5>
-        <h2 className="card-subtitle mb-2 text-muted">{app.date}</h2>
+        <h3 className="card-subtitle mb-2 text-muted">Appointment date:</h3>
+        <h3 className="card-subtitle mb-2 text-muted">{app.date}</h3>
+        <h5 className="card-text">Coach :</h5>
         <h5 className="card-text">{app.coach.name}</h5>
       </div>
     </div>
@@ -35,6 +36,5 @@ Card.defaultProps = {
 };
 
 Card.propTypes = {
-  // card: PropTypes.arrayOf(Object),
   card: PropTypes.objectOf(Object),
 };
