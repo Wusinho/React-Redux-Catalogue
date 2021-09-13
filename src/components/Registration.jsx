@@ -30,31 +30,54 @@ const Registration = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Registration</h2>
-      <input
-        type="username"
-        name="username"
-        placeholder="username"
-        onChange={handleChange}
-        required
-      />
-      <input
-        type="password"
-        name="password"
-        placeholder="Password"
-        onChange={handleChange}
-        required
-      />
-      <input
-        type="password"
-        name="password_confirmation"
-        placeholder="Password confirmation"
-        onChange={handleChange}
-        required
-      />
-      <button type="submit">Register</button>
-    </form>
+    <div className="home border-0 rounded-0">
+      <div className="card-home">
+        <h5 className="card-title">Sing In</h5>
+        <form onSubmit={handleSubmit} className="login">
+          <div className="mb-3">
+            <label htmlFor="username">
+              Username
+              <input
+                type="text"
+                name="username"
+                placeholder="username"
+                onChange={handleChange}
+                className="form-control"
+                required
+              />
+            </label>
+          </div>
+          <div className="mb-3">
+            <label htmlFor="password">
+              Password
+              <input
+                className="form-control"
+                type="password"
+                name="password"
+                placeholder="Password"
+                onChange={handleChange}
+                required
+              />
+            </label>
+          </div>
+          <div className="mb-3">
+            <label htmlFor="password">
+              Password Confirmation
+              <input
+                className="form-control"
+                type="password"
+                name="password_confirmation"
+                placeholder="Password confirmation"
+                onChange={handleChange}
+                required
+              />
+            </label>
+          </div>
+          <button className="btn btn-success" type="submit">Register</button>
+        </form>
+
+      </div>
+    </div>
   );
 };
 
