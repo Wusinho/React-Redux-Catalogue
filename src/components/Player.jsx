@@ -9,6 +9,7 @@ import {
 } from '../store/sessionSlice';
 import Loading from './Loading';
 import Card from './Card';
+import '../style/Player.scss';
 
 const Player = () => {
   const token = useSelector(selectCurrentUserToken);
@@ -26,7 +27,7 @@ const Player = () => {
   }
 
   return (
-    <div className="home">
+    <div className="player-page">
       { token
         ? (
           <div className="card-group">

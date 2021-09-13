@@ -9,6 +9,7 @@ function Card({ appointment }) {
       className="card m-2 rounded-3 link__card"
       style={{
         minWidth: '300px',
+        // width: '100%',
         backgroundColor: 'black',
         backgroundImage: getPicture(app.role),
       }}

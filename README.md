@@ -1,7 +1,9 @@
-# React - Redux Catalogue
+# React - Booking-coach-App
 
-It is game catalogue based on #Catalogue of Recipes, using React and Redux, It has a home page with information, and on the navbar it is possible see all the champion in the game League of Legends, it is possible to see a specific champion with a small description.
-It has a login feature with a rails-api back-end server.
+This proyect is a booking-coach application, for the game League of Legends. The front-end was built using React-Redux and for the back-end Rails-api.
+
+It has a home page with some of the proyect's details, on the navbar it is possible to see all the champions in the game and loop through their roles with specific information on each champion. 
+To set up an appointment the user must register, the "Appointment" page will render once the user is logged in.
 
 ## WebSite Sections
 - Homepage, there is a small description of the project.
@@ -35,10 +37,10 @@ It has a login feature with a rails-api back-end server.
 
 - Open your terminal and cd where you want to store the project
 - Run the following command - `git clone https://github.com/Wusinho/React-Redux-Catalogue.git `
-- Cd into the directory - `cd fluffy-companion`
+- Cd into the directory - `cd React-Redux-Catalogue`
 - Run `npm install` to install all dependencies
 - To run the pogram type `npm run dev` on your terminal.
-- By default it will open in firefox, however you can  open it in another browser with `http://localhost:3000/`
+- By default it will open in google-chrome however you can configure `./config/webpack.dev` to open it another browser.
 
 - To run the tests `npm run test`
 
