@@ -62,7 +62,7 @@ const AppointmetForm = () => {
     <div className="App">
       <button
         type="button"
-        className="btn btn-success"
+        className="button mb-3"
         onClick={() => setShowModal(true)}
       >
         Add Champ
