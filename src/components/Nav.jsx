@@ -7,7 +7,6 @@ import {
   loadcoach,
   selectCurrentUserToken,
 } from '../store/sessionSlice';
-
 import '../style/Nav.scss';
 
 const Nav = () => {
@@ -40,15 +39,16 @@ const Nav = () => {
               <li>Appointments</li>
             </NavLink>
             <NavLink to="">
-              <button type="button" onClick={handleLogout} className="button">Log Out</button>
+              <button type="button" onClick={handleLogout} className="button">
+                Log Out
+              </button>
             </NavLink>
           </>
-        )
-          : (
-            <NavLink to="/sign_in">
-              <li>Sign in</li>
-            </NavLink>
-          )}
+        ) : (
+          <NavLink to="/sign_in">
+            <li>Sign in</li>
+          </NavLink>
+        )}
       </ul>
     </nav>
   );
