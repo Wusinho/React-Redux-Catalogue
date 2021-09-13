@@ -73,7 +73,7 @@ const Registration = () => {
               />
             </label>
           </div>
-          <button className="btn btn-success" type="submit">Register</button>
+          <button className="button" type="submit">Register</button>
         </form>
 
       </div>

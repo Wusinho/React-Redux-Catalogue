@@ -60,7 +60,7 @@ const SignIn = () => {
               />
             </label>
           </div>
-          <button className="btn btn-success" type="submit">Log In</button>
+          <button className="button" type="submit">Log In</button>
         </form>
         <Link to="/registration">
           <li>Registration</li>
