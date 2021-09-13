@@ -26,7 +26,7 @@ const Player = () => {
   }
 
   return (
-    <div>
+    <div className="home">
       { token
         ? (
           <div className="card-group">
