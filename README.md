@@ -1,6 +1,7 @@
 # React - Redux Catalogue
 
 It is game catalogue based on #Catalogue of Recipes, using React and Redux, It has a home page with information, and on the navbar it is possible see all the champion in the game League of Legends, it is possible to see a specific champion with a small description.
+It has a login feature with a rails-api back-end server.
 
 ## WebSite Sections
 - Homepage, there is a small description of the project.
@@ -28,6 +29,7 @@ It is game catalogue based on #Catalogue of Recipes, using React and Redux, It h
 - Redux
 - Bootstrap
 - Package.json
+- Rails-api Back-end
 
 ## How to start the project from your Local environment
 
