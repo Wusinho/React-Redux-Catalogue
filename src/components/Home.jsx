@@ -18,6 +18,7 @@ const Home = () => (
         <li>Redux</li>
         <li>Bootstrap</li>
         <li>Package.json</li>
+        <li>Rails Api</li>
       </ul>
       <a className="card-title link" href="https://github.com/Wusinho/React-Redux-Catalogue" target="_blank" rel="noreferrer">Link to Repo</a>
     </div>
