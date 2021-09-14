@@ -17,7 +17,7 @@ To set up an appointment the user must register, the "Appointment" page will ren
 
 ## Live demo
 
-[live demo](https://611c155ea8618b0008ba97ff--hungry-tereshkova-d0e975.netlify.app/)
+[live demo](https://wusinho.github.io/React-Redux-Catalogue/)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/87e2870c-fd49-4ded-b5c4-cd4853958e8b/deploy-status)](https://app.netlify.com/sites/hungry-tereshkova-d0e975/deploys)
 
