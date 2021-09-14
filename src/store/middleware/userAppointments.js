@@ -18,8 +18,7 @@ const userAppointments = ({ dispatch }) => (next) => (action) => {
 
   axios
     .get(
-      // 'https://shielded-waters-88645.herokuapp.com/user/${getID}',
-      'http://localhost:3000/appointments/',
+      'https://polar-dawn-64735.herokuapp.com/appointments/',
       { headers },
       { mode: 'cors' },
     )

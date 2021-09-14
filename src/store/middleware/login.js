@@ -15,8 +15,7 @@ const login = ({ dispatch }) => (next) => (action) => {
 
   axios
     .post(
-      // "https://shielded-waters-88645.herokuapp.com/login/",
-      'http://localhost:3000/login',
+      'https://polar-dawn-64735.herokuapp.com/login/',
       data,
     )
     .then((response) => {

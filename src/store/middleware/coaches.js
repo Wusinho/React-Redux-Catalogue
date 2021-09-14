@@ -18,8 +18,7 @@ const coaches = ({ dispatch }) => (next) => (action) => {
 
   axios
     .get(
-      // 'https://shielded-waters-88645.herokuapp.com/coaches/',
-      'http://localhost:3000/coaches',
+      'https://polar-dawn-64735.herokuapp.com/coaches/',
       { headers },
       { mode: 'cors' },
     )
