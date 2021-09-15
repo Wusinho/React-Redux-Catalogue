@@ -1,7 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-// import { prettyDOM } from '@testing-library/dom';
+import { Provider } from 'react-redux';
+import store from '../../store/configureStore';
 import Champ from '../../components/Champ';
 
 describe('Champ', () => {
@@ -16,7 +17,9 @@ describe('Champ', () => {
     const champ = {};
     const img = {};
     const element = render(
-      <Champ champ={champ} img={img} />,
+      <Provider store={store}>
+        <Champ champ={champ} img={img} />
+      </Provider>,
     );
     expect(element.container.querySelector('champ__card')).toEqual(null);
   });

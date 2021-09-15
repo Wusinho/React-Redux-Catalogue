@@ -12,6 +12,8 @@ Object {
           class="nav-links"
         >
           <a
+            aria-current="page"
+            class="active"
             href="/"
           >
             <li>
@@ -23,6 +25,13 @@ Object {
           >
             <li>
               Champs
+            </li>
+          </a>
+          <a
+            href="/sign_in"
+          >
+            <li>
+              Sign in
             </li>
           </a>
         </ul>
@@ -37,6 +46,8 @@ Object {
         class="nav-links"
       >
         <a
+          aria-current="page"
+          class="active"
           href="/"
         >
           <li>
@@ -48,6 +59,13 @@ Object {
         >
           <li>
             Champs
+          </li>
+        </a>
+        <a
+          href="/sign_in"
+        >
+          <li>
+            Sign in
           </li>
         </a>
       </ul>
