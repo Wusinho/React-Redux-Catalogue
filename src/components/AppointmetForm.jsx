@@ -11,15 +11,15 @@ import '../style/Signin.scss';
 
 const modalStyle = {
   overlay: {
-    'margin-top': '30%',
+    marginTop: '30%',
     height: '50%',
     backgroundColor: 'none',
     border: 'none',
   },
   content: {
     backgroundColor: 'rgba(194, 194, 194, 0.8)',
-    'max-width': '50%',
-    'min-width': '100%',
+    maxWidth: '50%',
+    minWidth: '100%',
     border: 'none',
     height: '310px',
   },

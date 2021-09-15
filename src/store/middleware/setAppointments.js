@@ -18,7 +18,8 @@ const setAppointments = ({ dispatch }) => (next) => (action) => {
 
   axios
     .post(
-      'https://polar-dawn-64735.herokuapp.com/appointments/',
+      // 'https://polar-dawn-64735.herokuapp.com/appointments/',
+      'http://localhost:3000/appointments',
       data,
       { headers },
       { mode: 'cors' },

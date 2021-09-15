@@ -22,7 +22,8 @@ const registration = ({ dispatch }) => (next) => (action) => {
 
   axios
     .post(
-      'https://polar-dawn-64735.herokuapp.com/users/',
+      // 'https://polar-dawn-64735.herokuapp.com/users/',
+      'http://localhost:3000/users',
       data,
       headers,
       cors,

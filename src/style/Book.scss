@@ -8,7 +8,7 @@
   transition-duration: $animation-dur;
   border: none;
   filter: blur(1px);
-
+  overflow: hidden;
   h5,
   h2 {
     color: white;
