@@ -14,6 +14,7 @@ const coaches = ({ dispatch }) => (next) => (action) => {
 
   const headers = {
     Authorization: `Bearer ${token}`,
+    'Access-Control-Allow-Origin': '*',
   };
 
   axios
