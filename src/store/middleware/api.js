@@ -10,8 +10,14 @@ const api = ({ dispatch }) => (next) => (action) => {
   if (onStart) dispatch({ type: onStart });
   next(action);
 
+  const headers = {
+    'Access-Control-Allow-Origin': '*',
+  };
+
   axios
-    .get('https://ddragon.leagueoflegends.com/cdn/11.16.1/data/en_US/champion.json')
+    .get('https://ddragon.leagueoflegends.com/cdn/11.16.1/data/en_US/champion.json',
+      { headers },
+      { mode: 'cors' })
     .then((response) => {
       dispatch(actions.apiCallSuccess(response.data.data));
       if (onSuccess) dispatch({ type: onSuccess, payload: response.data.data });
