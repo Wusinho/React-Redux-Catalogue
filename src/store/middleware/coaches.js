@@ -18,8 +18,8 @@ const coaches = ({ dispatch }) => (next) => (action) => {
 
   axios
     .get(
-      // 'https://polar-dawn-64735.herokuapp.com/coaches/',
-      'http://localhost:3000/coaches',
+      'https://polar-dawn-64735.herokuapp.com/coaches/',
+      // 'http://localhost:3000/coaches',
       { headers },
       { mode: 'cors' },
     )
