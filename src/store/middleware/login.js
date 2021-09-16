@@ -6,7 +6,7 @@ const login = ({ dispatch }) => (next) => (action) => {
   if (action.type !== actions.sessionCallBegan.type) return next(action);
 
   const {
-    data, onStart, onSuccess, onError,
+    url, data, onStart, onSuccess, onError,
   } = action.payload;
 
   if (onStart) dispatch({ type: onStart });
@@ -15,8 +15,7 @@ const login = ({ dispatch }) => (next) => (action) => {
 
   axios
     .post(
-      'https://sheltered-plains-89590.herokuapp.com/login',
-      // 'http://localhost:3000/login',
+      `${url}login`,
       data,
     )
     .then((response) => {

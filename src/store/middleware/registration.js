@@ -6,7 +6,7 @@ const registration = ({ dispatch }) => (next) => (action) => {
   if (action.type !== actions.regCallBegan.type) return next(action);
 
   const {
-    data, onStart, onSuccess, onError,
+    url, data, onStart, onSuccess, onError,
   } = action.payload;
 
   if (onStart) dispatch({ type: onStart });
@@ -22,8 +22,7 @@ const registration = ({ dispatch }) => (next) => (action) => {
 
   axios
     .post(
-      'https://sheltered-plains-89590.herokuapp.com/users',
-      // 'http://localhost:3000/users',
+      `${url}users`,
       data,
       headers,
       cors,

@@ -116,7 +116,7 @@ export const {
 } = sessionSlice.actions;
 export default sessionSlice.reducer;
 
-const url = '/api';
+const url = 'https://obscure-harbor-00572.herokuapp.com/';
 
 export const register = (data) => regCallBegan({
   url,
@@ -127,6 +127,7 @@ export const register = (data) => regCallBegan({
 });
 
 export const signIn = (data) => sessionCallBegan({
+  url,
   data,
   onStart: sessionRequested.type,
   onSuccess: sessionReceived.type,
@@ -134,6 +135,7 @@ export const signIn = (data) => sessionCallBegan({
 });
 
 export const loadcoach = (token) => coachCallBegan({
+  url,
   token,
   onStart: coachRequested.type,
   onSuccess: coachReceived.type,
@@ -141,6 +143,7 @@ export const loadcoach = (token) => coachCallBegan({
 });
 
 export const usersAppointments = (token) => appointmentCallBegan({
+  url,
   token,
   onStart: appointmentRequested.type,
   onSuccess: appointmentReceived.type,
@@ -148,6 +151,7 @@ export const usersAppointments = (token) => appointmentCallBegan({
 });
 
 export const setAppointments = (token, data) => setappointmentCallBegan({
+  url,
   token,
   data,
   onStart: setappointmentRequested.type,

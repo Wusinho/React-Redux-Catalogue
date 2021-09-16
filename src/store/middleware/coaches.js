@@ -6,22 +6,21 @@ const coaches = ({ dispatch }) => (next) => (action) => {
   if (action.type !== actions.coachCallBegan.type) return next(action);
 
   const {
-    token, onStart, onSuccess, onError,
+    url, token, onStart, onSuccess, onError,
   } = action.payload;
 
   if (onStart) dispatch({ type: onStart });
   next(action);
 
   const headers = {
-    Authorization: `Bearer ${token}`,
     'Access-Control-Allow-Origin': '*',
+    Authorization: `Bearer ${token}`,
   };
 
   axios
     .get(
-      'https://polar-dawn-64735.herokuapp.com/coaches/',
-      // 'http://localhost:3000/coaches',
-      { headers },
+      `${url}coaches`,
+      headers,
       { mode: 'cors' },
     )
     .then((response) => {

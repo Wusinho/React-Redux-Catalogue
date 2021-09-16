@@ -6,7 +6,7 @@ const userAppointments = ({ dispatch }) => (next) => (action) => {
   if (action.type !== actions.appointmentCallBegan.type) return next(action);
 
   const {
-    token, onStart, onSuccess, onError,
+    url, token, onStart, onSuccess, onError,
   } = action.payload;
 
   if (onStart) dispatch({ type: onStart });
@@ -18,8 +18,7 @@ const userAppointments = ({ dispatch }) => (next) => (action) => {
 
   axios
     .get(
-      'https://sheltered-plains-89590.herokuapp.com/appointments',
-      // 'http://localhost:3000/appointments',
+      `${url}appointments`,
       { headers },
       { mode: 'cors' },
     )
