@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect, Link } from 'react-router-dom';
-import { signIn, selectIsLoggedIn } from '../store/sessionSlice';
+import { signIn, selectIsLoggedIn, isloading } from '../store/sessionSlice';
+import Loading from './Loading';
 import '../style/Signin.scss';
 
 const SignIn = () => {
   const loggedIn = useSelector(selectIsLoggedIn);
+  const loadginStat = useSelector(isloading);
 
   const dispatch = useDispatch();
   const [data, setData] = useState({
@@ -60,7 +62,11 @@ const SignIn = () => {
               />
             </label>
           </div>
-          <button className="button" type="submit">Log In</button>
+          {
+            loadginStat
+              ? <Loading />
+              : <button className="button" type="submit">Log In</button>
+          }
         </form>
         <Link to="/registration">
           <li>Registration</li>
