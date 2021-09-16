@@ -34,7 +34,7 @@ const Registration = () => {
   return (
     <div className="home border-0 rounded-0">
       <div className="card-home">
-        <h5 className="card-title">Sing In</h5>
+        <h5 className="card-title">Registration</h5>
         <form onSubmit={handleSubmit} className="login">
           <div className="mb-3">
             <label htmlFor="username">

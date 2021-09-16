@@ -32,7 +32,7 @@ export const sessionSlice = createSlice({
       api.loading = true;
     },
     regReceived: (api, action) => {
-      api.user = action.payload;
+      api.user = action.payload.user;
       api.token = action.payload.token;
       api.isLoggedIn = action.payload.status;
       api.loading = false;
@@ -116,7 +116,8 @@ export const {
 } = sessionSlice.actions;
 export default sessionSlice.reducer;
 
-const url = 'https://obscure-harbor-00572.herokuapp.com/';
+// const url = 'https://stark-harbor-49111.herokuapp.com/';
+const url = 'http://localhost:3000/';
 
 export const register = (data) => regCallBegan({
   url,
