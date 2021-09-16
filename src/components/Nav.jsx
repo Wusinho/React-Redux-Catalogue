@@ -19,7 +19,7 @@ const Nav = () => {
     e.preventDefault();
   };
   useEffect(() => {
-    if (loggedIn) {
+    if (loggedIn && token) {
       dispatch(loadcoach(token));
     }
   });
