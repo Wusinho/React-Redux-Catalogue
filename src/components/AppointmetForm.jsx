@@ -84,8 +84,8 @@ const AppointmetForm = () => {
                 onChange={handleChange}
                 name="coach_id"
               >
-                <option key="0" disabled>
-                  Choose
+                <option key="choose">
+                  Choose a coach
                 </option>
                 {coaches.map((cat) => (
                   <option key={cat.id} value={cat.id}>
