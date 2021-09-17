@@ -1,3 +1,4 @@
+/* eslint-disable object-shorthand */
 import axios from 'axios';
 import * as actions from '../api';
 
@@ -20,7 +21,9 @@ const setAppointments = ({ dispatch }) => (next) => (action) => {
     .post(
       `${url}appointments`,
       data,
-      { headers },
+      {
+        headers: headers,
+      },
       { mode: 'cors' },
     )
     .then((response) => {
