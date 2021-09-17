@@ -111,7 +111,7 @@ export const {
 } = sessionSlice.actions;
 export default sessionSlice.reducer;
 
-const url = 'https://obscure-sea-39669.herokuapp.com/';
+const url = 'https://stormy-meadow-49812.herokuapp.com/';
 // const url = 'http://localhost:3000/';
 
 export const register = (data) => regCallBegan({
