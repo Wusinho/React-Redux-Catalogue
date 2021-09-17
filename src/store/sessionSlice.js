@@ -21,10 +21,6 @@ export const sessionSlice = createSlice({
     error: '',
   },
   reducers: {
-    signUp: (state, action) => {
-      state.user = action.payload;
-      state.isLoggedIn = true;
-    },
     logOut: (state) => {
       state.isLoggedIn = false;
     },
@@ -96,7 +92,6 @@ export const selectCoachList = (state) => state.entities.session.coachList;
 export const isloading = (state) => state.entities.session.loading;
 export const selectAppointments = (state) => state.entities.session.usersAppointments;
 export const {
-  signUp,
   logOut,
   regRequested,
   regReceived,
@@ -116,8 +111,8 @@ export const {
 } = sessionSlice.actions;
 export default sessionSlice.reducer;
 
-// const url = 'https://stark-harbor-49111.herokuapp.com/';
-const url = 'http://localhost:3000/';
+const url = 'https://obscure-sea-39669.herokuapp.com/';
+// const url = 'http://localhost:3000/';
 
 export const register = (data) => regCallBegan({
   url,
