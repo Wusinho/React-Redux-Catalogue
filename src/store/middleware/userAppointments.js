@@ -1,3 +1,4 @@
+/* eslint-disable object-shorthand */
 import axios from 'axios';
 import * as actions from '../api';
 
@@ -19,7 +20,9 @@ const userAppointments = ({ dispatch }) => (next) => (action) => {
   axios
     .get(
       `${url}appointments`,
-      { headers },
+      {
+        headers: headers,
+      },
       { mode: 'cors' },
     )
     .then((response) => {
