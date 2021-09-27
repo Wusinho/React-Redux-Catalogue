@@ -1,10 +1,10 @@
 import React from 'react';
+import '../style/Loading.scss';
 
 const Loading = () => (
-  <div>
-    <h1>
-      Loading...
-    </h1>
+  <div className="lds-ripple">
+    <div />
+    <div />
   </div>
 );
 

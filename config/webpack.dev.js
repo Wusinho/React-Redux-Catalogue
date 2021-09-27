@@ -8,9 +8,9 @@ const common = require("./webpack.common");
 const devConfig = {
   mode: 'development',
   devServer: {
-    port: 3000,
+    port: 3001,
     contentBase: '../dist',
-    open: 'chrome',
+    open: 'google-chrome',
     hot: true,
   },
   target: 'web',

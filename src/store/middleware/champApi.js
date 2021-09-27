@@ -13,7 +13,8 @@ const champApi = ({ dispatch }) => (next) => (action) => {
   next(action);
 
   axios
-    .get(`https://ddragon.leagueoflegends.com/cdn/11.16.1/data/en_US/champion/${ID}.json`)
+    .get(`https://ddragon.leagueoflegends.com/cdn/11.16.1/data/en_US/champion/${ID}.json`,
+      { mode: 'cors' })
     .then((response) => {
       dispatch(actions.champCallSuccess(response.data.data));
       if (onSuccess) dispatch({ type: onSuccess, payload: response.data.data });

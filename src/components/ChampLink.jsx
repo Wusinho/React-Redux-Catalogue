@@ -5,7 +5,7 @@ import '../style/Book.scss';
 
 const ChampLink = ({ champs }) => {
   const getChamps = Object.entries(champs).map((item) => (item[1]));
-  const getPicture = (name) => `url("http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${name}_0.jpg")`;
+  const getPicture = (name) => `url("https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${name}_0.jpg")`;
 
   return getChamps.map((champ) => (
     <div

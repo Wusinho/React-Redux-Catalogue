@@ -1,6 +1,10 @@
-# React - Redux Catalogue
+# React-Redux Booking-Coach-App
+# Final Capstone Project.
 
-It is game catalogue based on #Catalogue of Recipes, using React and Redux, It has a home page with information, and on the navbar it is possible see all the champion in the game League of Legends, it is possible to see a specific champion with a small description.
+This proyect is a booking-coach application, for the game League of Legends. The front-end was built using React-Redux and for the back-end Rails-api.
+
+It has a home page with some of the proyect's details, on the navbar it is possible to see all the champions in the game and loop through their roles with specific information on each champion. 
+To set up an appointment the user must register, the "Appointment" page will render once the user is logged in.
 
 ## WebSite Sections
 - Homepage, there is a small description of the project.
@@ -13,7 +17,7 @@ It is game catalogue based on #Catalogue of Recipes, using React and Redux, It h
 
 ## Live demo
 
-[live demo](https://611c155ea8618b0008ba97ff--hungry-tereshkova-d0e975.netlify.app/)
+[live demo](https://6144d74d4118f87127f8e629--gallant-allen-0cf0f8.netlify.app/)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/87e2870c-fd49-4ded-b5c4-cd4853958e8b/deploy-status)](https://app.netlify.com/sites/hungry-tereshkova-d0e975/deploys)
 
@@ -28,15 +32,16 @@ It is game catalogue based on #Catalogue of Recipes, using React and Redux, It h
 - Redux
 - Bootstrap
 - Package.json
+- Rails-api Back-end
 
 ## How to start the project from your Local environment
 
 - Open your terminal and cd where you want to store the project
 - Run the following command - `git clone https://github.com/Wusinho/React-Redux-Catalogue.git `
-- Cd into the directory - `cd fluffy-companion`
+- Cd into the directory - `cd React-Redux-Catalogue`
 - Run `npm install` to install all dependencies
 - To run the pogram type `npm run dev` on your terminal.
-- By default it will open in firefox, however you can  open it in another browser with `http://localhost:3000/`
+- By default it will open in google-chrome however you can configure `./config/webpack.dev` to open it another browser.
 
 - To run the tests `npm run test`
 

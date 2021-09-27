@@ -8,7 +8,7 @@ export const champSlice = createSlice({
   initialState: {
     loading: false,
     list: {},
-    champSelection: null,
+    champTags: '',
     category: 'All',
     selected: {},
   },
@@ -23,9 +23,6 @@ export const champSlice = createSlice({
     champsRequestFailed: (champs) => {
       champs.loading = false;
     },
-    champSelection: (champs, action) => {
-      champs.champSelection = action.payload;
-    },
     champCategory: (champs, action) => {
       champs.category = action.payload;
     },
@@ -39,6 +36,9 @@ export const champSlice = createSlice({
     slectedRequestFailed: (champs) => {
       champs.loading = false;
     },
+    selectedChampTags: (champs, action) => {
+      champs.champTags = action.payload;
+    },
   },
 });
 
@@ -51,9 +51,14 @@ export const {
   selectedRequested,
   selectedReceived,
   slectedRequestFailed,
+  selectedChampTags,
 } = champSlice.actions;
 
 export default champSlice.reducer;
+
+export const selectCategory = (state) => state.entities.champs.category;
+export const selectChamp = (state) => state.entities.champs.selected;
+export const selectTag = (state) => state.entities.champs.champTags;
 
 const url = '/champs';
 

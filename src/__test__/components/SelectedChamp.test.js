@@ -3,9 +3,7 @@ import { Provider } from 'react-redux';
 import { act, render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import SelectedChamp from '../../components/SelectedChamp';
-import configureStoreApp from '../../store/configureStore';
-
-const store = configureStoreApp();
+import store from '../../store/configureStore';
 
 test('renders content', () => {
   const match = {
