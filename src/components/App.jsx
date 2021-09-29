@@ -10,6 +10,7 @@ import SelectedChamp from './SelectedChamp';
 import Registration from './Registration';
 import SignIn from './SignIn';
 import Player from './Player';
+import About from './About';
 import '../style/App.scss';
 
 store.dispatch(loadchamps());
@@ -26,6 +27,7 @@ const App = () => (
           <Route exact path="/registration" component={Registration} />
           <Route exact path="/sign_in" component={SignIn} />
           <Route exact path="/player" component={Player} />
+          <Route exact path="/about" component={About} />
         </Switch>
       </div>
     </Router>
