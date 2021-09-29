@@ -141,9 +141,10 @@ export const loadcoach = (token) => coachCallBegan({
   onError: coachRequestFailed.type,
 });
 
-export const usersAppointments = (token) => appointmentCallBegan({
+export const usersAppointments = (token, id) => appointmentCallBegan({
   url,
   token,
+  id,
   onStart: appointmentRequested.type,
   onSuccess: appointmentReceived.type,
   onError: appointmentRequestFailed.type,
