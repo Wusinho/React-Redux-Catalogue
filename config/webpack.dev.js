@@ -12,6 +12,7 @@ const devConfig = {
     contentBase: '../dist',
     open: 'google-chrome',
     hot: true,
+    historyApiFallback: true
   },
   target: 'web',
   plugins: [new HotModuleReplacementPlugin(), new ReactRefreshWebpackPlugin()],
