@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import { register, selectIsLoggedIn, isloading } from '../store/sessionSlice';
+import {
+  register,
+  selectIsLoggedIn,
+  isloading,
+  ifError,
+} from '../store/sessionSlice';
 import Loading from './Loading';
 
 const Registration = () => {
@@ -11,6 +16,7 @@ const Registration = () => {
     password_confirmation: '',
   });
   const loggedIn = useSelector(selectIsLoggedIn);
+  const error = useSelector(ifError);
   const loadginStat = useSelector(isloading);
 
   const dispatch = useDispatch();
@@ -75,6 +81,7 @@ const Registration = () => {
               />
             </label>
           </div>
+          { error && <h2>{error}</h2>}
           {
             loadginStat
               ? <Loading />

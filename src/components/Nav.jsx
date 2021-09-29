@@ -49,6 +49,9 @@ const Nav = () => {
             <li>Sign in</li>
           </NavLink>
         )}
+        <NavLink to="/about">
+          <li>About</li>
+        </NavLink>
       </ul>
     </nav>
   );

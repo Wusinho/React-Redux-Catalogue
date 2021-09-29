@@ -30,6 +30,7 @@ export const sessionSlice = createSlice({
     regReceived: (api, action) => {
       api.user = action.payload.user;
       api.token = action.payload.token;
+      api.error = action.payload.error;
       api.isLoggedIn = action.payload.status;
       api.loading = false;
     },
@@ -44,6 +45,7 @@ export const sessionSlice = createSlice({
       api.user = action.payload.user;
       api.token = action.payload.token;
       api.isLoggedIn = action.payload.status;
+      api.error = action.payload.error;
       api.loading = false;
     },
     sessionRequestFailed: (api, action) => {
@@ -88,6 +90,7 @@ export const sessionSlice = createSlice({
 export const selectCurrentUser = (state) => state.entities.session.user;
 export const selectCurrentUserToken = (state) => state.entities.session.token;
 export const selectIsLoggedIn = (state) => state.entities.session.isLoggedIn;
+export const ifError = (state) => state.entities.session.error;
 export const selectCoachList = (state) => state.entities.session.coachList;
 export const isloading = (state) => state.entities.session.loading;
 export const selectAppointments = (state) => state.entities.session.usersAppointments;
@@ -111,7 +114,7 @@ export const {
 } = sessionSlice.actions;
 export default sessionSlice.reducer;
 
-const url = 'https://stormy-meadow-49812.herokuapp.com/';
+const url = 'https://enigmatic-sierra-93966.herokuapp.com/';
 // const url = 'http://localhost:3000/';
 
 export const register = (data) => regCallBegan({

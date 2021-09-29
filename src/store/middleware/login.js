@@ -15,7 +15,7 @@ const login = ({ dispatch }) => (next) => (action) => {
 
   axios
     .post(
-      `${url}login`,
+      `${url}users/login`,
       data,
     )
     .then((response) => {
