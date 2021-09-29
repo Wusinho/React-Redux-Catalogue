@@ -21,7 +21,6 @@ const login = ({ dispatch }) => (next) => (action) => {
     .then((response) => {
       dispatch(actions.sessionCallSuccess(response));
       if (onSuccess) dispatch({ type: onSuccess, payload: response.data });
-      console.log(response.data);
     })
     .catch((error) => {
       dispatch(actions.sessionCallFailed(error.message));
