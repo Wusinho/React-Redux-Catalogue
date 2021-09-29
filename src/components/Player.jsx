@@ -6,7 +6,6 @@ import {
   selectAppointments,
   usersAppointments,
   selectIsLoggedIn,
-  userID,
 } from '../store/sessionSlice';
 import Loading from './Loading';
 import Card from './Card';
@@ -14,14 +13,13 @@ import '../style/Player.scss';
 
 const Player = () => {
   const token = useSelector(selectCurrentUserToken);
-  const ID = useSelector(userID);
   const appointment = useSelector(selectAppointments);
   const loggedIn = useSelector(selectIsLoggedIn);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(usersAppointments(token, ID));
+    dispatch(usersAppointments(token));
   }, []);
 
   if (!loggedIn) {
