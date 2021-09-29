@@ -114,8 +114,8 @@ export const {
 } = sessionSlice.actions;
 export default sessionSlice.reducer;
 
-// const url = 'https://stormy-meadow-49812.herokuapp.com/';
-const url = 'http://localhost:3000/';
+const url = 'https://enigmatic-sierra-93966.herokuapp.com/';
+// const url = 'http://localhost:3000/';
 
 export const register = (data) => regCallBegan({
   url,
@@ -141,10 +141,9 @@ export const loadcoach = (token) => coachCallBegan({
   onError: coachRequestFailed.type,
 });
 
-export const usersAppointments = (token, id) => appointmentCallBegan({
+export const usersAppointments = (token) => appointmentCallBegan({
   url,
   token,
-  id,
   onStart: appointmentRequested.type,
   onSuccess: appointmentReceived.type,
   onError: appointmentRequestFailed.type,
