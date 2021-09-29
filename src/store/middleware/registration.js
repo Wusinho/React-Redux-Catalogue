@@ -30,7 +30,6 @@ const registration = ({ dispatch }) => (next) => (action) => {
     .then((response) => {
       dispatch(actions.regCallSuccess(response));
       if (onSuccess) dispatch({ type: onSuccess, payload: response.data });
-      console.log(response.data);
     })
     .catch((error) => {
       dispatch(actions.regCallFailed(error.message));
