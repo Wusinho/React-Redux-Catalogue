@@ -44,6 +44,7 @@ export const sessionSlice = createSlice({
       api.user = action.payload.user;
       api.token = action.payload.token;
       api.isLoggedIn = action.payload.status;
+      api.error = action.payload.error;
       api.loading = false;
     },
     sessionRequestFailed: (api, action) => {
