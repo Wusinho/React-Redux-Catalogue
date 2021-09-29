@@ -7,9 +7,11 @@ const Home = () => (
       <p className="card-title">
         Search for your favorite champion role,
         find interesting characteristics and learn every bit to master it.
+      </p>
+      <p>
         If you want some help with your gameplay or tips
         you can set an appointment once you are register.
-        Once logged there will be an Appointment tab
+        There will be an Appointment tab
         where you can see your upcoming session with the coach you selected.
       </p>
     </div>
