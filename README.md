@@ -6,7 +6,7 @@ This proyect is a booking-coach application, for the game League of Legends. The
 It has a home page with some of the proyect's details, on the navbar it is possible to see all the champions in the game and loop through their roles with specific information on each champion. 
 To set up an appointment the user must register, the "Appointment" page will render once the user is logged in.
 
-The link for the back-end
+The link for the
 [back end](https://github.com/Wusinho/booking-backend-api/tree/Dev-feature-heroku-deploy)
 
 ## WebSite Sections
