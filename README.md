@@ -17,13 +17,6 @@ The link for the
 - Single page with the selected item information.
 ![image](./src/assets/Selected.png)
 
-
-## Live demo
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/87e2870c-fd49-4ded-b5c4-cd4853958e8b/deploy-status)](https://app.netlify.com/sites/hungry-tereshkova-d0e975/deploys)
-
-
-
 ## Built With
 
 - JavaScript
