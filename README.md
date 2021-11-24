@@ -20,8 +20,6 @@ The link for the
 
 ## Live demo
 
-[live demo](https://6144d74d4118f87127f8e629--gallant-allen-0cf0f8.netlify.app/)
-
 [![Netlify Status](https://api.netlify.com/api/v1/badges/87e2870c-fd49-4ded-b5c4-cd4853958e8b/deploy-status)](https://app.netlify.com/sites/hungry-tereshkova-d0e975/deploys)
 
 
