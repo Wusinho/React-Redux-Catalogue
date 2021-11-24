@@ -7,7 +7,7 @@ It has a home page with some of the proyect's details, on the navbar it is possi
 To set up an appointment the user must register, the "Appointment" page will render once the user is logged in.
 
 The link for the back-end
-.[back-end](https://github.com/Wusinho/booking-backend-api/tree/Dev-feature-heroku-deploy)
+[back end](https://github.com/Wusinho/booking-backend-api/tree/Dev-feature-heroku-deploy)
 
 ## WebSite Sections
 - Homepage, there is a small description of the project.
