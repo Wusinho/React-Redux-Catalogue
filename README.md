@@ -59,7 +59,6 @@ Give a star if you :star: like this project!
 
 ## Acknowledgments
 
-- Microverse
 - Unsplash
 
 ## 📝 License
