@@ -1,5 +1,4 @@
 # React-Redux Booking-Coach-App
-# Final Capstone Project.
 
 This proyect is a booking-coach application, for the game League of Legends. The front-end was built using React-Redux and for the back-end Rails-api.
 
