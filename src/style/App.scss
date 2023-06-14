@@ -1,0 +1,16 @@
+.root {
+  background-color: #2a2a35;
+  opacity: 0.9;
+  background-image: radial-gradient(circle at center center, #000, #2a2a35), repeating-radial-gradient(circle at center center, #000, #000, 40px, transparent 80px, transparent 40px);
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+@media only screen and (max-width: 425px) {
+  .root {
+    background-attachment: scroll;
+  }
+}

@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:wght@400;700&display=swap');
+
+$animation-dur: 800ms;
+$font-title: 'Roboto', sans-serif;
+$font-text: 'Roboto Mono', monospace;
+$color-blue: #0548fb;
+$color-pink: #fd14f9;
+
+@mixin text {
+  transition-duration: $animation-dur;
+  color: $color-blue;
+}
+
+@mixin textHover {
+  color: $color-pink;
+  text-shadow: 1px 1px 1px black;
+  transition-duration: $animation-dur;
+}
